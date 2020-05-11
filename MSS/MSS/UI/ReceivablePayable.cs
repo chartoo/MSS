@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace MSS.UI
 {
-    public partial class Category : Form
+    public partial class ReceivablePayable : Form
     {
-        public Category()
+        public ReceivablePayable()
         {
             InitializeComponent();
         }
-        public Panel CategoryPanel()
+        public Panel ReceivablePayablePanel()
         {
-            return panelCategory;
+            return panelReceivablePayable;
         }
-        private void Category_Load(object sender, EventArgs e)
+        private void ReceivablePayable_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnNewCategory_Click(object sender, EventArgs e)
-        {
-            new AddCategory().ShowDialog();
         }
     }
 }

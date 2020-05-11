@@ -24,5 +24,15 @@ namespace MSS.UI
         {
 
         }
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            new AddCustomer().ShowDialog();
+        }
+
+        private void btnNewCategory_Click(object sender, EventArgs e)
+        {
+            new AddCategory().ShowDialog();
+        }
     }
 }

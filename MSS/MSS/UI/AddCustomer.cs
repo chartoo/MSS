@@ -10,25 +10,21 @@ using System.Windows.Forms;
 
 namespace MSS.UI
 {
-    public partial class Customer : Form
+    public partial class AddCustomer : Form
     {
-        public Customer()
+        public AddCustomer()
         {
             InitializeComponent();
         }
 
-        public Panel CustomerPanel()
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            return panelCustomer;
-        }
-        private void Customer_Load(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
 
-        private void btnNewCustomer_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            new AddCustomer().ShowDialog();
+            this.Close();
         }
     }
 }

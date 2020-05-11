@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCustomerShort = new System.Windows.Forms.Button();
+            this.btnServiceShort = new System.Windows.Forms.Button();
+            this.btnSaleShort = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SidebarPanel = new System.Windows.Forms.Panel();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnRecPay = new System.Windows.Forms.Button();
             this.btnProfit = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
@@ -107,9 +108,9 @@
             this.TopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TopPanel.Controls.Add(this.label27);
             this.TopPanel.Controls.Add(this.label26);
-            this.TopPanel.Controls.Add(this.button4);
-            this.TopPanel.Controls.Add(this.button3);
-            this.TopPanel.Controls.Add(this.button2);
+            this.TopPanel.Controls.Add(this.btnCustomerShort);
+            this.TopPanel.Controls.Add(this.btnServiceShort);
+            this.TopPanel.Controls.Add(this.btnSaleShort);
             this.TopPanel.Controls.Add(this.panel3);
             this.TopPanel.Controls.Add(this.panel2);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -140,46 +141,49 @@
             this.label26.TabIndex = 5;
             this.label26.Text = "10:10 PM";
             // 
-            // button4
+            // btnCustomerShort
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(450, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 57);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Customers";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCustomerShort.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerShort.Image")));
+            this.btnCustomerShort.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCustomerShort.Location = new System.Drawing.Point(450, 4);
+            this.btnCustomerShort.Name = "btnCustomerShort";
+            this.btnCustomerShort.Size = new System.Drawing.Size(89, 57);
+            this.btnCustomerShort.TabIndex = 4;
+            this.btnCustomerShort.Text = "Customers";
+            this.btnCustomerShort.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCustomerShort.UseVisualStyleBackColor = true;
+            this.btnCustomerShort.Click += new System.EventHandler(this.btnCustomerShort_Click);
             // 
-            // button3
+            // btnServiceShort
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(353, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 57);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "ဝန်ဆောင်မှု";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnServiceShort.Image = ((System.Drawing.Image)(resources.GetObject("btnServiceShort.Image")));
+            this.btnServiceShort.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnServiceShort.Location = new System.Drawing.Point(353, 4);
+            this.btnServiceShort.Name = "btnServiceShort";
+            this.btnServiceShort.Size = new System.Drawing.Size(89, 57);
+            this.btnServiceShort.TabIndex = 3;
+            this.btnServiceShort.Text = "ဝန်ဆောင်မှု";
+            this.btnServiceShort.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnServiceShort.UseVisualStyleBackColor = true;
+            this.btnServiceShort.Click += new System.EventHandler(this.btnServiceShort_Click);
             // 
-            // button2
+            // btnSaleShort
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(258, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 57);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "အရောင်း";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSaleShort.Image = ((System.Drawing.Image)(resources.GetObject("btnSaleShort.Image")));
+            this.btnSaleShort.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSaleShort.Location = new System.Drawing.Point(258, 4);
+            this.btnSaleShort.Name = "btnSaleShort";
+            this.btnSaleShort.Size = new System.Drawing.Size(89, 57);
+            this.btnSaleShort.TabIndex = 2;
+            this.btnSaleShort.Text = "အရောင်း";
+            this.btnSaleShort.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSaleShort.UseVisualStyleBackColor = true;
+            this.btnSaleShort.Click += new System.EventHandler(this.btnSaleShort_Click);
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnLogout);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
@@ -188,17 +192,18 @@
             this.panel3.Size = new System.Drawing.Size(188, 68);
             this.panel3.TabIndex = 1;
             // 
-            // button1
+            // btnLogout
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(48, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Red;
+            this.btnLogout.Location = new System.Drawing.Point(48, 39);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(102, 23);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label6
             // 
@@ -321,6 +326,7 @@
             this.SidebarPanel.AutoScroll = true;
             this.SidebarPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.SidebarPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.SidebarPanel.Controls.Add(this.btnChangePassword);
             this.SidebarPanel.Controls.Add(this.btnRecPay);
             this.SidebarPanel.Controls.Add(this.btnProfit);
             this.SidebarPanel.Controls.Add(this.btnCustomer);
@@ -336,6 +342,18 @@
             this.SidebarPanel.Size = new System.Drawing.Size(252, 464);
             this.SidebarPanel.TabIndex = 2;
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePassword.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnChangePassword.Location = new System.Drawing.Point(0, 421);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(248, 39);
+            this.btnChangePassword.TabIndex = 12;
+            this.btnChangePassword.Text = "Change Password ";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // btnRecPay
             // 
             this.btnRecPay.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -346,6 +364,7 @@
             this.btnRecPay.TabIndex = 11;
             this.btnRecPay.Text = "ရရန်/ပေးရန်";
             this.btnRecPay.UseVisualStyleBackColor = true;
+            this.btnRecPay.Click += new System.EventHandler(this.btnRecPay_Click);
             // 
             // btnProfit
             // 
@@ -462,20 +481,20 @@
             // 
             // chartIncome
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea2);
             this.chartIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartIncome.Location = new System.Drawing.Point(0, 144);
             this.chartIncome.Name = "chartIncome";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.Navy;
-            series1.MarkerBorderColor = System.Drawing.Color.Green;
-            series1.Name = "အရောင်းမှရရှိငွေ";
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.Green;
-            series2.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
-            this.chartIncome.Series.Add(series1);
-            this.chartIncome.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Color = System.Drawing.Color.Navy;
+            series3.MarkerBorderColor = System.Drawing.Color.Green;
+            series3.Name = "အရောင်းမှရရှိငွေ";
+            series4.ChartArea = "ChartArea1";
+            series4.Color = System.Drawing.Color.Green;
+            series4.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
+            this.chartIncome.Series.Add(series3);
+            this.chartIncome.Series.Add(series4);
             this.chartIncome.Size = new System.Drawing.Size(852, 316);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "Income Status";
@@ -747,7 +766,9 @@
             this.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Main";
-            this.Text = "OK Mobile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MSS Accounting";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
@@ -826,12 +847,13 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCustomerShort;
+        private System.Windows.Forms.Button btnServiceShort;
+        private System.Windows.Forms.Button btnSaleShort;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }
 

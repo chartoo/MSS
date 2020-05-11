@@ -74,5 +74,44 @@ namespace MSS
         {
 
         }
+
+        private void btnRecPay_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new ReceivablePayable().ReceivablePayablePanel());
+        }
+
+        private void btnSaleShort_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new Sale().SalePanel());
+        }
+
+        private void btnServiceShort_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new Service().ServicePanel());
+        }
+
+        private void btnCustomerShort_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new Customer().CustomerPanel());
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword changePasswordDialog = new ChangePassword();
+            changePasswordDialog.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show( "Are you sure wish to Logout ? ", "Question?", MessageBoxButtons.YesNo).Equals(DialogResult.Yes))
+            {
+                new Login().Show();
+                this.Hide();
+            }
+        }
     }
 }
