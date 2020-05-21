@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MSS.DB;
 namespace MSS.UI
 {
     public partial class Login : Form
@@ -30,6 +30,11 @@ namespace MSS.UI
                 MessageBox.Show("Incorrect Password! Please try again");
                 txtPassword.Text = "";
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+          new ConnectionManager().GetAllUsers();
         }
     }
 }

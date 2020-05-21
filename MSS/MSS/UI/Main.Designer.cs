@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SidebarPanel = new System.Windows.Forms.Panel();
-            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnUser = new System.Windows.Forms.Button();
             this.btnRecPay = new System.Windows.Forms.Button();
             this.btnProfit = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
@@ -326,7 +326,7 @@
             this.SidebarPanel.AutoScroll = true;
             this.SidebarPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.SidebarPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.SidebarPanel.Controls.Add(this.btnChangePassword);
+            this.SidebarPanel.Controls.Add(this.btnUser);
             this.SidebarPanel.Controls.Add(this.btnRecPay);
             this.SidebarPanel.Controls.Add(this.btnProfit);
             this.SidebarPanel.Controls.Add(this.btnCustomer);
@@ -342,17 +342,17 @@
             this.SidebarPanel.Size = new System.Drawing.Size(252, 464);
             this.SidebarPanel.TabIndex = 2;
             // 
-            // btnChangePassword
+            // btnUser
             // 
-            this.btnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangePassword.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnChangePassword.Location = new System.Drawing.Point(0, 421);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(248, 39);
-            this.btnChangePassword.TabIndex = 12;
-            this.btnChangePassword.Text = "Change Password ";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnUser.Location = new System.Drawing.Point(0, 421);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.Size = new System.Drawing.Size(248, 39);
+            this.btnUser.TabIndex = 12;
+            this.btnUser.Text = "Authorize Users";
+            this.btnUser.UseVisualStyleBackColor = true;
+            this.btnUser.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnRecPay
             // 
@@ -481,20 +481,20 @@
             // 
             // chartIncome
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea1);
             this.chartIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartIncome.Location = new System.Drawing.Point(0, 144);
             this.chartIncome.Name = "chartIncome";
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.Navy;
-            series3.MarkerBorderColor = System.Drawing.Color.Green;
-            series3.Name = "အရောင်းမှရရှိငွေ";
-            series4.ChartArea = "ChartArea1";
-            series4.Color = System.Drawing.Color.Green;
-            series4.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
-            this.chartIncome.Series.Add(series3);
-            this.chartIncome.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.Navy;
+            series1.MarkerBorderColor = System.Drawing.Color.Green;
+            series1.Name = "အရောင်းမှရရှိငွေ";
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.Green;
+            series2.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
+            this.chartIncome.Series.Add(series1);
+            this.chartIncome.Series.Add(series2);
             this.chartIncome.Size = new System.Drawing.Size(852, 316);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "Income Status";
@@ -853,7 +853,7 @@
         private System.Windows.Forms.Button btnCustomerShort;
         private System.Windows.Forms.Button btnServiceShort;
         private System.Windows.Forms.Button btnSaleShort;
-        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Button btnUser;
     }
 }
 

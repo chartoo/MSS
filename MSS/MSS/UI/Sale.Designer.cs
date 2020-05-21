@@ -92,6 +92,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelSaleLayoutTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.panelSale.SuspendLayout();
             this.panelSaleList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -337,6 +340,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dateTimePicker3);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.textBox7);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.button4);
@@ -367,17 +373,17 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(125, 378);
+            this.textBox7.Location = new System.Drawing.Point(125, 403);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(202, 72);
+            this.textBox7.Size = new System.Drawing.Size(202, 47);
             this.textBox7.TabIndex = 23;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(30, 381);
+            this.label22.Location = new System.Drawing.Point(30, 403);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(83, 23);
             this.label22.TabIndex = 22;
@@ -421,7 +427,7 @@
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Location = new System.Drawing.Point(0, 198);
+            this.panel3.Location = new System.Drawing.Point(3, 223);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(327, 174);
             this.panel3.TabIndex = 20;
@@ -548,7 +554,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(105, 129);
+            this.label12.Location = new System.Drawing.Point(105, 122);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(14, 16);
             this.label12.TabIndex = 19;
@@ -556,17 +562,17 @@
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(124, 158);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(124, 147);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 32);
+            this.textBox2.Size = new System.Drawing.Size(202, 24);
             this.textBox2.TabIndex = 18;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(70, 167);
+            this.label11.Location = new System.Drawing.Point(70, 153);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 23);
             this.label11.TabIndex = 17;
@@ -576,7 +582,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(191, 125);
+            this.checkBox2.Location = new System.Drawing.Point(191, 118);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(116, 27);
             this.checkBox2.TabIndex = 16;
@@ -589,7 +595,7 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(125, 125);
+            this.checkBox1.Location = new System.Drawing.Point(125, 118);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(60, 27);
             this.checkBox1.TabIndex = 15;
@@ -600,7 +606,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(39, 129);
+            this.label10.Location = new System.Drawing.Point(39, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 23);
             this.label10.TabIndex = 14;
@@ -630,10 +636,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(125, 84);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 32);
+            this.textBox1.Size = new System.Drawing.Size(202, 24);
             this.textBox1.TabIndex = 10;
             // 
             // label5
@@ -782,6 +788,38 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "‌ရောင်းချခြင်းအတွက် ဖြည့်စွက်ပုံစံ";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(110, 188);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(14, 16);
+            this.label23.TabIndex = 25;
+            this.label23.Text = "*";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(39, 187);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(72, 23);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "Sale Date :";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(125, 187);
+            this.dateTimePicker3.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker3.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(200, 24);
+            this.dateTimePicker3.TabIndex = 26;
+            // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -875,5 +913,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn actions;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
     }
 }

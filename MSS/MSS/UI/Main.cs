@@ -101,8 +101,8 @@ namespace MSS
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            ChangePassword changePasswordDialog = new ChangePassword();
-            changePasswordDialog.ShowDialog();
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new UserList().UserPanel());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

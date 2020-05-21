@@ -12,6 +12,7 @@ namespace MSS.UI
 {
     public partial class AddCategory : Form
     {
+        public int ID = 0;
         public AddCategory()
         {
             InitializeComponent();
@@ -24,7 +25,62 @@ namespace MSS.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (ID == 0)
+                STORE();
+            else
+                UPDATE();
+            
+        }
+        private void STORE()
+        {
+            if (txtName.Text != "")
+            {
+                DO.Category category = new DO.Category();
+                category.Name = txtName.Text;
+                if (new DB.Category().STORE(category))
+                    this.Close();
+                else
+                    MessageBox.Show("Could not save data! \n Please Try Again or Contact Support team", "Store Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                lbErrorName.Visible = true;
+           
+        }
+        private void UPDATE()
+        {
+            if (txtName.Text != "")
+            {
+                DO.Category category = new DO.Category();
+                category.Name = txtName.Text;
+                if (new DB.Category().UPDATE(ID,category))
+                    this.Close();
+                else
+                    MessageBox.Show("Could not update data! \n Please Try Again (or) Contact Support team", "Store Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                lbErrorName.Visible = true;
+            }
+        }
+        private void AddCategory_Load(object sender, EventArgs e)
+        {
+            if(ID!=0)
+            {
+                btnSave.Text = "Change";
+                btnDelete.Visible = true;
+                txtName.Text = new DB.Category().SHOW(ID).Name;  
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(ID!=0)
+            {
+                if(new DB.Category().DESTROY(ID))
+                {
+                    this.Close();
+                }
+            }
         }
     }
 }

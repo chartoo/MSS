@@ -31,26 +31,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCategory = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
             this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.created_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelTopSearch = new System.Windows.Forms.Panel();
             this.btnNewCategory = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbShowCount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearchCategory = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panelCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.panelTopSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCategory
             // 
-            this.panelCategory.Controls.Add(this.dataGridView1);
+            this.panelCategory.Controls.Add(this.dgvCategory);
             this.panelCategory.Controls.Add(this.panelTopSearch);
             this.panelCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCategory.Location = new System.Drawing.Point(0, 0);
@@ -58,27 +59,32 @@
             this.panelCategory.Size = new System.Drawing.Size(1004, 480);
             this.panelCategory.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvCategory
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dgvCategory.AllowUserToAddRows = false;
+            this.dgvCategory.AllowUserToDeleteRows = false;
+            this.dgvCategory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.no,
+            this.id,
             this.name,
-            this.created_date,
+            this.created_at,
             this.actions});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 39);
-            this.dataGridView1.Name = "dataGridView1";
+            this.dgvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCategory.EnableHeadersVisualStyles = false;
+            this.dgvCategory.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvCategory.Location = new System.Drawing.Point(0, 39);
+            this.dgvCategory.Name = "dgvCategory";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,10 +92,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1004, 441);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvCategory.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCategory.RowHeadersVisible = false;
+            this.dgvCategory.RowTemplate.Height = 30;
+            this.dgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCategory.Size = new System.Drawing.Size(1004, 441);
+            this.dgvCategory.TabIndex = 1;
+            this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
+            this.dgvCategory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellMouseEnter);
             // 
             // no
             // 
@@ -98,6 +108,12 @@
             this.no.ReadOnly = true;
             this.no.Width = 60;
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
             // name
             // 
             this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -105,12 +121,12 @@
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
-            // created_date
+            // created_at
             // 
-            this.created_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.created_date.HeaderText = "Created Time";
-            this.created_date.Name = "created_date";
-            this.created_date.ReadOnly = true;
+            this.created_at.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.created_at.HeaderText = "Created Time";
+            this.created_at.Name = "created_at";
+            this.created_at.ReadOnly = true;
             // 
             // actions
             // 
@@ -123,9 +139,9 @@
             this.panelTopSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTopSearch.Controls.Add(this.btnNewCategory);
             this.panelTopSearch.Controls.Add(this.label3);
-            this.panelTopSearch.Controls.Add(this.label2);
+            this.panelTopSearch.Controls.Add(this.lbShowCount);
             this.panelTopSearch.Controls.Add(this.label1);
-            this.panelTopSearch.Controls.Add(this.textBox1);
+            this.panelTopSearch.Controls.Add(this.txtSearchCategory);
             this.panelTopSearch.Controls.Add(this.label5);
             this.panelTopSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopSearch.Location = new System.Drawing.Point(0, 0);
@@ -157,16 +173,16 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "ဖုန်းအမျိုးအစား အသစ်ထည့်ရန် : ";
             // 
-            // label2
+            // lbShowCount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(947, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 34);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "00";
+            this.lbShowCount.AutoSize = true;
+            this.lbShowCount.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowCount.ForeColor = System.Drawing.Color.Navy;
+            this.lbShowCount.Location = new System.Drawing.Point(947, 3);
+            this.lbShowCount.Name = "lbShowCount";
+            this.lbShowCount.Size = new System.Drawing.Size(37, 34);
+            this.lbShowCount.TabIndex = 14;
+            this.lbShowCount.Text = "00";
             // 
             // label1
             // 
@@ -178,13 +194,14 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "စုစုပေါင်း အရေအတွက် :";
             // 
-            // textBox1
+            // txtSearchCategory
             // 
-            this.textBox1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(612, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 30);
-            this.textBox1.TabIndex = 12;
+            this.txtSearchCategory.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCategory.Location = new System.Drawing.Point(612, 5);
+            this.txtSearchCategory.Name = "txtSearchCategory";
+            this.txtSearchCategory.Size = new System.Drawing.Size(150, 30);
+            this.txtSearchCategory.TabIndex = 12;
+            this.txtSearchCategory.TextChanged += new System.EventHandler(this.txtSearchCategory_TextChanged);
             // 
             // label5
             // 
@@ -206,7 +223,7 @@
             this.Text = "Category";
             this.Load += new System.EventHandler(this.Category_Load);
             this.panelCategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.panelTopSearch.ResumeLayout(false);
             this.panelTopSearch.PerformLayout();
             this.ResumeLayout(false);
@@ -217,16 +234,17 @@
 
         private System.Windows.Forms.Panel panelCategory;
         private System.Windows.Forms.Panel panelTopSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dgvCategory;
+        private System.Windows.Forms.TextBox txtSearchCategory;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn created_date;
-        private System.Windows.Forms.DataGridViewButtonColumn actions;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbShowCount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnNewCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
+        private System.Windows.Forms.DataGridViewButtonColumn actions;
     }
 }

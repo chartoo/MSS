@@ -1,4 +1,5 @@
-﻿using MSS.UI;
+﻿using MSS.DB;
+using MSS.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace MSS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Main());
         }
     }
 }

@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MSS
+namespace MSS.UI
 {
-    public partial class Form1 : Form
+    public partial class AddUser : Form
     {
-        public Form1()
+        public int ID = 0;
+        public AddUser()
         {
             InitializeComponent();
         }
+
+      
     }
 }

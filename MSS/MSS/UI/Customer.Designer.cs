@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCustomer = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,21 +42,21 @@
             this.panelTopSearch = new System.Windows.Forms.Panel();
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbRowCount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSearchPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearchName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelCustomer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.panelTopSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCustomer
             // 
-            this.panelCustomer.Controls.Add(this.dataGridView1);
+            this.panelCustomer.Controls.Add(this.dgvCustomer);
             this.panelCustomer.Controls.Add(this.panelTopSearch);
             this.panelCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCustomer.Location = new System.Drawing.Point(0, 0);
@@ -63,34 +64,47 @@
             this.panelCustomer.Size = new System.Drawing.Size(1058, 536);
             this.panelCustomer.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvCustomer
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
+            this.dgvCustomer.AllowUserToOrderColumns = true;
+            this.dgvCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.no,
+            this.id,
             this.name,
             this.gender,
             this.phone,
             this.address,
             this.created_at,
             this.actions});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1058, 454);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvCustomer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomer.EnableHeadersVisualStyles = false;
+            this.dgvCustomer.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvCustomer.Location = new System.Drawing.Point(0, 82);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersVisible = false;
+            this.dgvCustomer.RowTemplate.Height = 30;
+            this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCustomer.ShowCellErrors = false;
+            this.dgvCustomer.ShowRowErrors = false;
+            this.dgvCustomer.Size = new System.Drawing.Size(1058, 454);
+            this.dgvCustomer.TabIndex = 1;
+            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
+            this.dgvCustomer.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellMouseEnter);
             // 
             // no
             // 
@@ -98,6 +112,13 @@
             this.no.Name = "no";
             this.no.ReadOnly = true;
             this.no.Width = 60;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // name
             // 
@@ -144,11 +165,11 @@
             this.panelTopSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTopSearch.Controls.Add(this.btnNewCustomer);
             this.panelTopSearch.Controls.Add(this.label6);
-            this.panelTopSearch.Controls.Add(this.label5);
+            this.panelTopSearch.Controls.Add(this.lbRowCount);
             this.panelTopSearch.Controls.Add(this.label4);
-            this.panelTopSearch.Controls.Add(this.textBox2);
+            this.panelTopSearch.Controls.Add(this.txtSearchPhone);
             this.panelTopSearch.Controls.Add(this.label3);
-            this.panelTopSearch.Controls.Add(this.textBox1);
+            this.panelTopSearch.Controls.Add(this.txtSearchName);
             this.panelTopSearch.Controls.Add(this.label2);
             this.panelTopSearch.Controls.Add(this.label1);
             this.panelTopSearch.Dock = System.Windows.Forms.DockStyle.Top;
@@ -181,16 +202,16 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Customer အသစ် ထည့်ရန် :";
             // 
-            // label5
+            // lbRowCount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(894, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 27);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "00";
+            this.lbRowCount.AutoSize = true;
+            this.lbRowCount.Font = new System.Drawing.Font("Myanmar Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRowCount.ForeColor = System.Drawing.Color.Navy;
+            this.lbRowCount.Location = new System.Drawing.Point(894, 39);
+            this.lbRowCount.Name = "lbRowCount";
+            this.lbRowCount.Size = new System.Drawing.Size(30, 27);
+            this.lbRowCount.TabIndex = 6;
+            this.lbRowCount.Text = "00";
             // 
             // label4
             // 
@@ -202,13 +223,14 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "စုစု‌ပေါင်း အရေအတွက် :";
             // 
-            // textBox2
+            // txtSearchPhone
             // 
-            this.textBox2.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(601, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 30);
-            this.textBox2.TabIndex = 4;
+            this.txtSearchPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchPhone.Location = new System.Drawing.Point(601, 39);
+            this.txtSearchPhone.Name = "txtSearchPhone";
+            this.txtSearchPhone.Size = new System.Drawing.Size(154, 24);
+            this.txtSearchPhone.TabIndex = 4;
+            this.txtSearchPhone.TextChanged += new System.EventHandler(this.txtSearchPhone_TextChanged);
             // 
             // label3
             // 
@@ -220,13 +242,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Phone No.";
             // 
-            // textBox1
+            // txtSearchName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(388, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 30);
-            this.textBox1.TabIndex = 2;
+            this.txtSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchName.Location = new System.Drawing.Point(393, 40);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Size = new System.Drawing.Size(131, 22);
+            this.txtSearchName.TabIndex = 2;
+            this.txtSearchName.TextChanged += new System.EventHandler(this.txtSearchName_TextChanged);
             // 
             // label2
             // 
@@ -258,7 +281,7 @@
             this.Text = "Customer";
             this.Load += new System.EventHandler(this.Customer_Load);
             this.panelCustomer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.panelTopSearch.ResumeLayout(false);
             this.panelTopSearch.PerformLayout();
             this.ResumeLayout(false);
@@ -268,23 +291,24 @@
         #endregion
 
         private System.Windows.Forms.Panel panelCustomer;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Panel panelTopSearch;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbRowCount;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSearchPhone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearchName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnNewCustomer;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
         private System.Windows.Forms.DataGridViewButtonColumn actions;
-        private System.Windows.Forms.Button btnNewCustomer;
-        private System.Windows.Forms.Label label6;
     }
 }
