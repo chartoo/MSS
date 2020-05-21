@@ -84,7 +84,7 @@ namespace MSS.DO
 
             set
             {
-                password = value;
+                password= value;
             }
         }
 

@@ -41,6 +41,7 @@ namespace MSS.UI
         {
             AddUser addUser = new AddUser();
             addUser.ShowDialog();
+            SHOW_ALL();
         }
         private void SHOW_ALL()
         {
@@ -57,9 +58,13 @@ namespace MSS.UI
                 dgvUser.Rows[row].Cells["phone"].Value = user.Phone;
                 dgvUser.Rows[row].Cells["created_at"].Value = user.Created_at;
                 dgvUser.Rows[row].Cells["actions"].Value = "Detail";
+                lbCount.Text = (row + 1).ToString();
             }
         }
-       
 
+        private void UserList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

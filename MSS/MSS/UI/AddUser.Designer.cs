@@ -47,6 +47,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.lbErrorName = new System.Windows.Forms.Label();
+            this.lbErrorRole = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,7 +116,7 @@
             "Admin",
             "Casher",
             "Other"});
-            this.cbRole.Location = new System.Drawing.Point(107, 93);
+            this.cbRole.Location = new System.Drawing.Point(107, 91);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(146, 24);
             this.cbRole.TabIndex = 6;
@@ -133,6 +135,7 @@
             // rdbMale
             // 
             this.rdbMale.AutoSize = true;
+            this.rdbMale.Checked = true;
             this.rdbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbMale.Location = new System.Drawing.Point(341, 91);
             this.rdbMale.Name = "rdbMale";
@@ -141,6 +144,7 @@
             this.rdbMale.TabStop = true;
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
+            this.rdbMale.CheckedChanged += new System.EventHandler(this.rdbMale_CheckedChanged);
             // 
             // rdbFemale
             // 
@@ -150,9 +154,9 @@
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(72, 20);
             this.rdbFemale.TabIndex = 9;
-            this.rdbFemale.TabStop = true;
             this.rdbFemale.Text = "Female";
             this.rdbFemale.UseVisualStyleBackColor = true;
+            this.rdbFemale.CheckedChanged += new System.EventHandler(this.rdbFemale_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -162,7 +166,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 123);
+            this.groupBox1.Location = new System.Drawing.Point(22, 130);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(470, 73);
             this.groupBox1.TabIndex = 10;
@@ -223,7 +227,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(146, 202);
+            this.btnCancel.Location = new System.Drawing.Point(146, 209);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 11;
@@ -234,30 +238,58 @@
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnSave.Location = new System.Drawing.Point(259, 202);
+            this.btnSave.Location = new System.Drawing.Point(259, 209);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Location = new System.Drawing.Point(363, 202);
+            this.btnDelete.Location = new System.Drawing.Point(363, 209);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lbErrorName
+            // 
+            this.lbErrorName.AutoSize = true;
+            this.lbErrorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorName.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbErrorName.Location = new System.Drawing.Point(104, 74);
+            this.lbErrorName.Name = "lbErrorName";
+            this.lbErrorName.Size = new System.Drawing.Size(132, 13);
+            this.lbErrorName.TabIndex = 16;
+            this.lbErrorName.Text = "Name could not be Empty!";
+            this.lbErrorName.Visible = false;
+            // 
+            // lbErrorRole
+            // 
+            this.lbErrorRole.AutoSize = true;
+            this.lbErrorRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorRole.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbErrorRole.Location = new System.Drawing.Point(104, 116);
+            this.lbErrorRole.Name = "lbErrorRole";
+            this.lbErrorRole.Size = new System.Drawing.Size(93, 13);
+            this.lbErrorRole.TabIndex = 17;
+            this.lbErrorRole.Text = "Please select role!";
+            this.lbErrorRole.Visible = false;
             // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 242);
+            this.Controls.Add(this.lbErrorRole);
+            this.Controls.Add(this.lbErrorName);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
@@ -278,6 +310,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User";
+            this.Load += new System.EventHandler(this.AddUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -306,5 +339,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label lbErrorName;
+        private System.Windows.Forms.Label lbErrorRole;
     }
 }
