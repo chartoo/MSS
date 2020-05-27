@@ -145,7 +145,7 @@
             // 
             this.btnCustomerShort.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerShort.Image")));
             this.btnCustomerShort.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCustomerShort.Location = new System.Drawing.Point(450, 4);
+            this.btnCustomerShort.Location = new System.Drawing.Point(380, 4);
             this.btnCustomerShort.Name = "btnCustomerShort";
             this.btnCustomerShort.Size = new System.Drawing.Size(89, 57);
             this.btnCustomerShort.TabIndex = 4;
@@ -158,7 +158,7 @@
             // 
             this.btnServiceShort.Image = ((System.Drawing.Image)(resources.GetObject("btnServiceShort.Image")));
             this.btnServiceShort.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnServiceShort.Location = new System.Drawing.Point(353, 4);
+            this.btnServiceShort.Location = new System.Drawing.Point(283, 4);
             this.btnServiceShort.Name = "btnServiceShort";
             this.btnServiceShort.Size = new System.Drawing.Size(89, 57);
             this.btnServiceShort.TabIndex = 3;
@@ -171,7 +171,7 @@
             // 
             this.btnSaleShort.Image = ((System.Drawing.Image)(resources.GetObject("btnSaleShort.Image")));
             this.btnSaleShort.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSaleShort.Location = new System.Drawing.Point(258, 4);
+            this.btnSaleShort.Location = new System.Drawing.Point(188, 4);
             this.btnSaleShort.Name = "btnSaleShort";
             this.btnSaleShort.Size = new System.Drawing.Size(89, 57);
             this.btnSaleShort.TabIndex = 2;
@@ -237,14 +237,14 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 68);
+            this.panel2.Size = new System.Drawing.Size(182, 68);
             this.panel2.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar Text", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 36);
+            this.label4.Location = new System.Drawing.Point(-2, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 27);
@@ -256,7 +256,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Purple;
-            this.label3.Location = new System.Drawing.Point(57, 2);
+            this.label3.Location = new System.Drawing.Point(35, 2);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 34);
@@ -339,7 +339,7 @@
             this.SidebarPanel.Location = new System.Drawing.Point(0, 70);
             this.SidebarPanel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.SidebarPanel.Name = "SidebarPanel";
-            this.SidebarPanel.Size = new System.Drawing.Size(252, 464);
+            this.SidebarPanel.Size = new System.Drawing.Size(183, 464);
             this.SidebarPanel.TabIndex = 2;
             // 
             // btnUser
@@ -348,7 +348,7 @@
             this.btnUser.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnUser.Location = new System.Drawing.Point(0, 421);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(248, 39);
+            this.btnUser.Size = new System.Drawing.Size(179, 39);
             this.btnUser.TabIndex = 12;
             this.btnUser.Text = "Authorize Users";
             this.btnUser.UseVisualStyleBackColor = true;
@@ -360,7 +360,7 @@
             this.btnRecPay.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRecPay.Location = new System.Drawing.Point(0, 273);
             this.btnRecPay.Name = "btnRecPay";
-            this.btnRecPay.Size = new System.Drawing.Size(248, 39);
+            this.btnRecPay.Size = new System.Drawing.Size(179, 39);
             this.btnRecPay.TabIndex = 11;
             this.btnRecPay.Text = "ရရန်/ပေးရန်";
             this.btnRecPay.UseVisualStyleBackColor = true;
@@ -372,7 +372,7 @@
             this.btnProfit.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProfit.Location = new System.Drawing.Point(0, 234);
             this.btnProfit.Name = "btnProfit";
-            this.btnProfit.Size = new System.Drawing.Size(248, 39);
+            this.btnProfit.Size = new System.Drawing.Size(179, 39);
             this.btnProfit.TabIndex = 10;
             this.btnProfit.Text = "အရှုံး/အမြတ်";
             this.btnProfit.UseVisualStyleBackColor = true;
@@ -384,7 +384,7 @@
             this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCustomer.Location = new System.Drawing.Point(0, 195);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(248, 39);
+            this.btnCustomer.Size = new System.Drawing.Size(179, 39);
             this.btnCustomer.TabIndex = 9;
             this.btnCustomer.Text = "Customers";
             this.btnCustomer.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@
             this.btnCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCategory.Location = new System.Drawing.Point(0, 156);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(248, 39);
+            this.btnCategory.Size = new System.Drawing.Size(179, 39);
             this.btnCategory.TabIndex = 8;
             this.btnCategory.Text = "ဖုန်းအမျိုးအစားများ";
             this.btnCategory.UseVisualStyleBackColor = true;
@@ -408,7 +408,7 @@
             this.btnService.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnService.Location = new System.Drawing.Point(0, 117);
             this.btnService.Name = "btnService";
-            this.btnService.Size = new System.Drawing.Size(248, 39);
+            this.btnService.Size = new System.Drawing.Size(179, 39);
             this.btnService.TabIndex = 7;
             this.btnService.Text = "ဝန်ဆောင်မှု";
             this.btnService.UseVisualStyleBackColor = true;
@@ -420,7 +420,7 @@
             this.btnSale.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSale.Location = new System.Drawing.Point(0, 78);
             this.btnSale.Name = "btnSale";
-            this.btnSale.Size = new System.Drawing.Size(248, 39);
+            this.btnSale.Size = new System.Drawing.Size(179, 39);
             this.btnSale.TabIndex = 6;
             this.btnSale.Text = "အရောင်း";
             this.btnSale.UseVisualStyleBackColor = true;
@@ -432,7 +432,7 @@
             this.btnCashbook.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCashbook.Location = new System.Drawing.Point(0, 39);
             this.btnCashbook.Name = "btnCashbook";
-            this.btnCashbook.Size = new System.Drawing.Size(248, 39);
+            this.btnCashbook.Size = new System.Drawing.Size(179, 39);
             this.btnCashbook.TabIndex = 4;
             this.btnCashbook.Text = "နေ့စဉ်ငွေ စာရင်း";
             this.btnCashbook.UseVisualStyleBackColor = true;
@@ -444,7 +444,7 @@
             this.btnDashbook.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDashbook.Location = new System.Drawing.Point(0, 0);
             this.btnDashbook.Name = "btnDashbook";
-            this.btnDashbook.Size = new System.Drawing.Size(248, 39);
+            this.btnDashbook.Size = new System.Drawing.Size(179, 39);
             this.btnDashbook.TabIndex = 5;
             this.btnDashbook.Text = "Dashbook";
             this.btnDashbook.UseVisualStyleBackColor = true;
@@ -455,9 +455,9 @@
             this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMain.Controls.Add(this.panelDashbook);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(252, 70);
+            this.panelMain.Location = new System.Drawing.Point(183, 70);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(856, 464);
+            this.panelMain.Size = new System.Drawing.Size(925, 464);
             this.panelMain.TabIndex = 3;
             // 
             // panelDashbook
@@ -466,7 +466,7 @@
             this.panelDashbook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDashbook.Location = new System.Drawing.Point(0, 0);
             this.panelDashbook.Name = "panelDashbook";
-            this.panelDashbook.Size = new System.Drawing.Size(852, 460);
+            this.panelDashbook.Size = new System.Drawing.Size(921, 460);
             this.panelDashbook.TabIndex = 0;
             // 
             // panelMainDashbook
@@ -476,7 +476,7 @@
             this.panelMainDashbook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMainDashbook.Location = new System.Drawing.Point(0, 0);
             this.panelMainDashbook.Name = "panelMainDashbook";
-            this.panelMainDashbook.Size = new System.Drawing.Size(852, 460);
+            this.panelMainDashbook.Size = new System.Drawing.Size(921, 460);
             this.panelMainDashbook.TabIndex = 9;
             // 
             // chartIncome
@@ -495,7 +495,7 @@
             series2.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
             this.chartIncome.Series.Add(series1);
             this.chartIncome.Series.Add(series2);
-            this.chartIncome.Size = new System.Drawing.Size(852, 316);
+            this.chartIncome.Size = new System.Drawing.Size(921, 316);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "Income Status";
             // 
@@ -508,7 +508,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(852, 144);
+            this.panel7.Size = new System.Drawing.Size(921, 144);
             this.panel7.TabIndex = 8;
             // 
             // label25

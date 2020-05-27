@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSale = new System.Windows.Forms.Panel();
             this.panelSaleList = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSale = new System.Windows.Forms.DataGridView();
             this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.casher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sale_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imei = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +45,7 @@
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtSaleTotal = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -53,51 +55,51 @@
             this.label19 = new System.Windows.Forms.Label();
             this.panelSaleLayout = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dtpSaleDate = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbNotCleared = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.rdbCleared = new System.Windows.Forms.RadioButton();
+            this.txtReceivablePayable = new System.Windows.Forms.TextBox();
+            this.lbRecPay = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPayment = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIMEI = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbItem = new System.Windows.Forms.CheckBox();
+            this.cbMass = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPhoneModel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnNewCategory = new System.Windows.Forms.Button();
             this.btnNewCustomer = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.cmbCustomer = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCasher = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSaleLayoutTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.panelSale.SuspendLayout();
             this.panelSaleList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelSaleLayout.SuspendLayout();
@@ -119,7 +121,7 @@
             // 
             // panelSaleList
             // 
-            this.panelSaleList.Controls.Add(this.dataGridView1);
+            this.panelSaleList.Controls.Add(this.dgvSale);
             this.panelSaleList.Controls.Add(this.panel5);
             this.panelSaleList.Controls.Add(this.panel4);
             this.panelSaleList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -128,23 +130,25 @@
             this.panelSaleList.Size = new System.Drawing.Size(784, 597);
             this.panelSaleList.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvSale
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSale.AllowUserToAddRows = false;
+            this.dgvSale.AllowUserToDeleteRows = false;
+            this.dgvSale.AllowUserToOrderColumns = true;
+            this.dgvSale.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSale.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.no,
-            this.casher,
+            this.id,
+            this.sale_date,
             this.customer,
             this.item,
             this.imei,
@@ -152,20 +156,23 @@
             this.total,
             this.status,
             this.actions});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(784, 513);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvSale.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSale.EnableHeadersVisualStyles = false;
+            this.dgvSale.Location = new System.Drawing.Point(0, 44);
+            this.dgvSale.Name = "dgvSale";
+            this.dgvSale.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSale.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvSale.RowHeadersVisible = false;
+            this.dgvSale.RowTemplate.Height = 30;
+            this.dgvSale.Size = new System.Drawing.Size(784, 513);
+            this.dgvSale.TabIndex = 2;
             // 
             // no
             // 
@@ -174,12 +181,19 @@
             this.no.ReadOnly = true;
             this.no.Width = 40;
             // 
-            // casher
+            // id
             // 
-            this.casher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.casher.HeaderText = "Casher";
-            this.casher.Name = "casher";
-            this.casher.ReadOnly = true;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // sale_date
+            // 
+            this.sale_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sale_date.HeaderText = "Date";
+            this.sale_date.Name = "sale_date";
+            this.sale_date.ReadOnly = true;
             // 
             // customer
             // 
@@ -205,13 +219,15 @@
             // sale_type
             // 
             this.sale_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sale_type.HeaderText = "Sale Type";
+            this.sale_type.HeaderText = "Type";
             this.sale_type.Name = "sale_type";
             this.sale_type.ReadOnly = true;
             // 
             // total
             // 
             this.total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Maroon;
+            this.total.DefaultCellStyle = dataGridViewCellStyle5;
             this.total.HeaderText = "Total";
             this.total.Name = "total";
             this.total.ReadOnly = true;
@@ -232,7 +248,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.textBox6);
+            this.panel5.Controls.Add(this.txtSaleTotal);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 557);
@@ -240,15 +256,16 @@
             this.panel5.Size = new System.Drawing.Size(784, 40);
             this.panel5.TabIndex = 1;
             // 
-            // textBox6
+            // txtSaleTotal
             // 
-            this.textBox6.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(347, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 32);
-            this.textBox6.TabIndex = 32;
-            this.textBox6.Text = "0";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSaleTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaleTotal.Location = new System.Drawing.Point(347, 6);
+            this.txtSaleTotal.Name = "txtSaleTotal";
+            this.txtSaleTotal.ReadOnly = true;
+            this.txtSaleTotal.Size = new System.Drawing.Size(200, 22);
+            this.txtSaleTotal.TabIndex = 32;
+            this.txtSaleTotal.Text = "0";
+            this.txtSaleTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label21
             // 
@@ -279,7 +296,7 @@
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(440, 5);
+            this.button5.Location = new System.Drawing.Point(489, 7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 29);
             this.button5.TabIndex = 4;
@@ -288,29 +305,33 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(316, 11);
+            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(322, 11);
             this.dateTimePicker2.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker2.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(106, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(106, 21);
             this.dateTimePicker2.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(180, 11);
             this.dateTimePicker1.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(106, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(106, 21);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(292, 11);
+            this.label20.Location = new System.Drawing.Point(298, 11);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(18, 21);
             this.label20.TabIndex = 1;
@@ -340,28 +361,28 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.dateTimePicker3);
+            this.panel2.Controls.Add(this.dtpSaleDate);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label24);
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.txtDescription);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btnClear);
+            this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtIMEI);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.cbItem);
+            this.panel2.Controls.Add(this.cbMass);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtPhoneModel);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnNewCategory);
             this.panel2.Controls.Add(this.btnNewCustomer);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.cmbCategory);
+            this.panel2.Controls.Add(this.cmbCustomer);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -370,14 +391,47 @@
             this.panel2.Size = new System.Drawing.Size(332, 499);
             this.panel2.TabIndex = 3;
             // 
-            // textBox7
+            // dtpSaleDate
             // 
-            this.textBox7.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(125, 403);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(202, 47);
-            this.textBox7.TabIndex = 23;
+            this.dtpSaleDate.CustomFormat = "dd-MM-yyyy";
+            this.dtpSaleDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpSaleDate.Location = new System.Drawing.Point(125, 187);
+            this.dtpSaleDate.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpSaleDate.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpSaleDate.Name = "dtpSaleDate";
+            this.dtpSaleDate.Size = new System.Drawing.Size(200, 24);
+            this.dtpSaleDate.TabIndex = 26;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(110, 188);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(14, 16);
+            this.label23.TabIndex = 25;
+            this.label23.Text = "*";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(39, 187);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(72, 23);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "Sale Date :";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(125, 403);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(202, 47);
+            this.txtDescription.TabIndex = 23;
             // 
             // label22
             // 
@@ -389,59 +443,65 @@
             this.label22.TabIndex = 22;
             this.label22.Text = "Description :";
             // 
-            // button4
+            // btnClear
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button4.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(120, 456);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 37);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Clear";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnClear.Location = new System.Drawing.Point(120, 456);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(89, 37);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button3
+            // btnSave
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkGreen;
-            this.button3.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(228, 456);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 37);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Location = new System.Drawing.Point(228, 456);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(99, 37);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.radioButton2);
+            this.panel3.Controls.Add(this.rdbNotCleared);
             this.panel3.Controls.Add(this.label18);
-            this.panel3.Controls.Add(this.radioButton1);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.rdbCleared);
+            this.panel3.Controls.Add(this.txtReceivablePayable);
+            this.panel3.Controls.Add(this.lbRecPay);
             this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.txtPayment);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.txtTotal);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Location = new System.Drawing.Point(3, 223);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(327, 174);
             this.panel3.TabIndex = 20;
             // 
-            // radioButton2
+            // rdbNotCleared
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(207, 126);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(115, 27);
-            this.radioButton2.TabIndex = 30;
-            this.radioButton2.Text = "မရှင်းလင်းရသေး";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbNotCleared.AutoSize = true;
+            this.rdbNotCleared.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbNotCleared.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNotCleared.Location = new System.Drawing.Point(207, 126);
+            this.rdbNotCleared.Name = "rdbNotCleared";
+            this.rdbNotCleared.Size = new System.Drawing.Size(115, 27);
+            this.rdbNotCleared.TabIndex = 30;
+            this.rdbNotCleared.Text = "မရှင်းလင်းရသေး";
+            this.rdbNotCleared.UseVisualStyleBackColor = true;
+            this.rdbNotCleared.CheckedChanged += new System.EventHandler(this.rdbNotCleared_CheckedChanged);
             // 
             // label18
             // 
@@ -453,39 +513,41 @@
             this.label18.TabIndex = 29;
             this.label18.Text = "ကျန်ငွေကို :";
             // 
-            // radioButton1
+            // rdbCleared
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(119, 126);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(89, 27);
-            this.radioButton1.TabIndex = 28;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "ရှင်းလင်းပြီး";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbCleared.AutoSize = true;
+            this.rdbCleared.Checked = true;
+            this.rdbCleared.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbCleared.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbCleared.Location = new System.Drawing.Point(119, 126);
+            this.rdbCleared.Name = "rdbCleared";
+            this.rdbCleared.Size = new System.Drawing.Size(89, 27);
+            this.rdbCleared.TabIndex = 28;
+            this.rdbCleared.TabStop = true;
+            this.rdbCleared.Text = "ရှင်းလင်းပြီး";
+            this.rdbCleared.UseVisualStyleBackColor = true;
+            this.rdbCleared.CheckedChanged += new System.EventHandler(this.rdbCleared_CheckedChanged);
             // 
-            // textBox5
+            // txtReceivablePayable
             // 
-            this.textBox5.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(123, 88);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(200, 32);
-            this.textBox5.TabIndex = 27;
-            this.textBox5.Text = "0";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtReceivablePayable.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReceivablePayable.Location = new System.Drawing.Point(123, 88);
+            this.txtReceivablePayable.Name = "txtReceivablePayable";
+            this.txtReceivablePayable.ReadOnly = true;
+            this.txtReceivablePayable.Size = new System.Drawing.Size(200, 32);
+            this.txtReceivablePayable.TabIndex = 27;
+            this.txtReceivablePayable.Text = "0";
+            this.txtReceivablePayable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label17
+            // lbRecPay
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(0, 91);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 23);
-            this.label17.TabIndex = 26;
-            this.label17.Text = "ရရန်/ပေးရန် ကျန်ငွေ :";
+            this.lbRecPay.AutoSize = true;
+            this.lbRecPay.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRecPay.Location = new System.Drawing.Point(0, 91);
+            this.lbRecPay.Name = "lbRecPay";
+            this.lbRecPay.Size = new System.Drawing.Size(123, 23);
+            this.lbRecPay.TabIndex = 26;
+            this.lbRecPay.Text = "ရရန်/ပေးရန် ကျန်ငွေ :";
             // 
             // label15
             // 
@@ -498,15 +560,17 @@
             this.label15.TabIndex = 23;
             this.label15.Text = "*";
             // 
-            // textBox4
+            // txtPayment
             // 
-            this.textBox4.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(123, 50);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 32);
-            this.textBox4.TabIndex = 25;
-            this.textBox4.Text = "0";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPayment.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPayment.Location = new System.Drawing.Point(123, 50);
+            this.txtPayment.Name = "txtPayment";
+            this.txtPayment.Size = new System.Drawing.Size(200, 32);
+            this.txtPayment.TabIndex = 25;
+            this.txtPayment.Text = "0";
+            this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPayment.TextChanged += new System.EventHandler(this.txtPayment_TextChanged);
+            this.txtPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // label16
             // 
@@ -529,15 +593,16 @@
             this.label14.TabIndex = 21;
             this.label14.Text = "*";
             // 
-            // textBox3
+            // txtTotal
             // 
-            this.textBox3.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(123, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 32);
-            this.textBox3.TabIndex = 22;
-            this.textBox3.Text = "0";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotal.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(123, 12);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(200, 32);
+            this.txtTotal.TabIndex = 22;
+            this.txtTotal.Text = "0";
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // label13
             // 
@@ -560,13 +625,13 @@
             this.label12.TabIndex = 19;
             this.label12.Text = "*";
             // 
-            // textBox2
+            // txtIMEI
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(124, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 24);
-            this.textBox2.TabIndex = 18;
+            this.txtIMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIMEI.Location = new System.Drawing.Point(124, 147);
+            this.txtIMEI.Name = "txtIMEI";
+            this.txtIMEI.Size = new System.Drawing.Size(202, 24);
+            this.txtIMEI.TabIndex = 18;
             // 
             // label11
             // 
@@ -578,29 +643,31 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "IMEI :";
             // 
-            // checkBox2
+            // cbItem
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(191, 118);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(116, 27);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "ဆက်ဆက်ပစ္စည်း";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbItem.AutoSize = true;
+            this.cbItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbItem.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbItem.Location = new System.Drawing.Point(191, 118);
+            this.cbItem.Name = "cbItem";
+            this.cbItem.Size = new System.Drawing.Size(116, 27);
+            this.cbItem.TabIndex = 16;
+            this.cbItem.Text = "ဆက်ဆက်ပစ္စည်း";
+            this.cbItem.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbMass
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(125, 118);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(60, 27);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "အလုံး";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbMass.AutoSize = true;
+            this.cbMass.Checked = true;
+            this.cbMass.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbMass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMass.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMass.Location = new System.Drawing.Point(125, 118);
+            this.cbMass.Name = "cbMass";
+            this.cbMass.Size = new System.Drawing.Size(60, 27);
+            this.cbMass.TabIndex = 15;
+            this.cbMass.Text = "အလုံး";
+            this.cbMass.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -634,13 +701,13 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "*";
             // 
-            // textBox1
+            // txtPhoneModel
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(125, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 24);
-            this.textBox1.TabIndex = 10;
+            this.txtPhoneModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneModel.Location = new System.Drawing.Point(125, 84);
+            this.txtPhoneModel.Name = "txtPhoneModel";
+            this.txtPhoneModel.Size = new System.Drawing.Size(202, 24);
+            this.txtPhoneModel.TabIndex = 10;
             // 
             // label5
             // 
@@ -654,6 +721,7 @@
             // 
             // btnNewCategory
             // 
+            this.btnNewCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewCategory.Location = new System.Drawing.Point(267, 47);
             this.btnNewCategory.Name = "btnNewCategory";
@@ -665,32 +733,33 @@
             // 
             // btnNewCustomer
             // 
+            this.btnNewCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewCustomer.Location = new System.Drawing.Point(267, 9);
             this.btnNewCustomer.Name = "btnNewCustomer";
-            this.btnNewCustomer.Size = new System.Drawing.Size(60, 28);
+            this.btnNewCustomer.Size = new System.Drawing.Size(57, 28);
             this.btnNewCustomer.TabIndex = 5;
             this.btnNewCustomer.Text = "New";
             this.btnNewCustomer.UseVisualStyleBackColor = true;
             this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
             // 
-            // comboBox3
+            // cmbCategory
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(125, 46);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(136, 29);
-            this.comboBox3.TabIndex = 7;
+            this.cmbCategory.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Location = new System.Drawing.Point(125, 46);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(136, 29);
+            this.cmbCategory.TabIndex = 7;
             // 
-            // comboBox2
+            // cmbCustomer
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(125, 9);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(136, 29);
-            this.comboBox2.TabIndex = 4;
+            this.cmbCustomer.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCustomer.FormattingEnabled = true;
+            this.cmbCustomer.Location = new System.Drawing.Point(125, 9);
+            this.cmbCustomer.Name = "cmbCustomer";
+            this.cmbCustomer.Size = new System.Drawing.Size(136, 29);
+            this.cmbCustomer.TabIndex = 4;
             // 
             // label4
             // 
@@ -717,7 +786,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cmbCasher);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 39);
@@ -748,14 +817,15 @@
             this.label6.Text = "အနီရောင်(*)များသည် မဖြစ်မနေထည့်သွင်းရမည့်အချက်အလက်များဖြစ်သည်။";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // cmbCasher
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(129, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 29);
-            this.comboBox1.TabIndex = 3;
+            this.cmbCasher.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCasher.FormattingEnabled = true;
+            this.cmbCasher.Location = new System.Drawing.Point(129, 23);
+            this.cmbCasher.Name = "cmbCasher";
+            this.cmbCasher.Size = new System.Drawing.Size(196, 29);
+            this.cmbCasher.TabIndex = 3;
+            this.cmbCasher.SelectedIndexChanged += new System.EventHandler(this.cmbCasher_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -788,38 +858,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "‌ရောင်းချခြင်းအတွက် ဖြည့်စွက်ပုံစံ";
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(110, 188);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(14, 16);
-            this.label23.TabIndex = 25;
-            this.label23.Text = "*";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(39, 187);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(72, 23);
-            this.label24.TabIndex = 24;
-            this.label24.Text = "Sale Date :";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(125, 187);
-            this.dateTimePicker3.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker3.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker3.TabIndex = 26;
-            // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -828,10 +866,9 @@
             this.Controls.Add(this.panelSale);
             this.Name = "Sale";
             this.Text = "Sale";
-            this.Load += new System.EventHandler(this.Sale_Load);
             this.panelSale.ResumeLayout(false);
             this.panelSaleList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -861,40 +898,40 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelSaleList;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtReceivablePayable;
+        private System.Windows.Forms.Label lbRecPay;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPayment;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIMEI;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbItem;
+        private System.Windows.Forms.CheckBox cbMass;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPhoneModel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnNewCategory;
         private System.Windows.Forms.Button btnNewCustomer;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.ComboBox cmbCustomer;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ComboBox cmbCasher;
+        private System.Windows.Forms.RadioButton rdbCleared;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.RadioButton rdbNotCleared;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSale;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtSaleTotal;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button5;
@@ -902,8 +939,14 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DateTimePicker dtpSaleDate;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DataGridViewTextBoxColumn no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn casher;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sale_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn customer;
         private System.Windows.Forms.DataGridViewTextBoxColumn item;
         private System.Windows.Forms.DataGridViewTextBoxColumn imei;
@@ -911,10 +954,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewButtonColumn actions;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
     }
 }

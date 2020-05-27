@@ -66,12 +66,17 @@ namespace MSS.UI
                 else
                     STROE(user);
             }
-           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (DialogResult.Yes == MessageBox.Show("Are you sure want to remove this user? \n Name : " + txtName.Text, "Question?", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                if (new DB.User().DESTROY(ID))
+                    this.Close();
+                else
+                    MessageBox.Show("This User can not delete . \n If you wish to delete, Firstly delete related records.", "Couldn't Delete User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void STROE(DO.User user)
         {
