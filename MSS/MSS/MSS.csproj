@@ -67,11 +67,13 @@
     <Compile Include="DB\Customer.cs" />
     <Compile Include="DB\Migrations\Customer.cs" />
     <Compile Include="DB\Sale.cs" />
+    <Compile Include="DB\Service.cs" />
     <Compile Include="DB\User.cs" />
     <Compile Include="DO\Category.cs" />
     <Compile Include="DO\Customer.cs" />
     <Compile Include="DO\DataEncryptor.cs" />
     <Compile Include="DO\Sale.cs" />
+    <Compile Include="DO\Service.cs" />
     <Compile Include="DO\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
