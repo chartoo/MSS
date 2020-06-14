@@ -155,6 +155,7 @@ namespace MSS.UI
             service.Remain = Convert.ToDouble(txtRemain.Text);
             service.Cleared = cleared;
             service.RemainType = remainType;
+            service.Remark = txtRemark.Text;
             service.Description = txtDescription.Text;
             if (new DB.Service().STORE(service))
             {
@@ -213,7 +214,37 @@ namespace MSS.UI
             txtTotal.Text = "0";
             txtRemain.Text = "0";
             txtDescription.Text = "";
+            txtRemark.Text = "";
 
+        }
+        private void dgvService_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+            var row = dgvService.Rows[e.RowIndex];
+            var cell = row.Cells[e.ColumnIndex];
+
+            if (cell is DataGridViewButtonCell)
+            {
+                SaleEdit saleEdit = new SaleEdit();
+                saleEdit.ID = Convert.ToInt16(row.Cells["id"].Value);
+                saleEdit.ShowDialog();
+                SHOW_ALL();
+            }
+        }
+        private void dgvService_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
+            {
+                return;
+            }
+            var dataGridView = (sender as DataGridView);
+            var row = dgvService.Rows[e.RowIndex];
+            var cell = row.Cells[e.ColumnIndex];
+            if (cell is DataGridViewButtonCell)
+                dataGridView.Cursor = Cursors.Hand;
+            else
+                dataGridView.Cursor = Cursors.Default;
         }
     }
 }

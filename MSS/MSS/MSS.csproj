@@ -149,6 +149,12 @@
     <Compile Include="UI\Sale.Designer.cs">
       <DependentUpon>Sale.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SaleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SaleEdit.Designer.cs">
+      <DependentUpon>SaleEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Service.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SaleEdit.resx">
+      <DependentUpon>SaleEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Service.resx">
       <DependentUpon>Service.cs</DependentUpon>

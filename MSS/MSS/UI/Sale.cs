@@ -215,10 +215,34 @@ namespace MSS.UI
         {
             SetDefault();
         }
-
-        private void cmbCasher_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvSale_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+            var row = dgvSale.Rows[e.RowIndex];
+            var cell = row.Cells[e.ColumnIndex];
 
+            if (cell is DataGridViewButtonCell)
+            {
+                SaleEdit saleEdit = new SaleEdit();
+                saleEdit.ID = Convert.ToInt16(row.Cells["id"].Value);
+                saleEdit.ShowDialog();
+                SHOW_ALL();
+            }
+        }
+        private void dgvSale_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
+            {
+                return;
+            }
+            var dataGridView = (sender as DataGridView);
+            var row = dgvSale.Rows[e.RowIndex];
+            var cell = row.Cells[e.ColumnIndex];
+            if (cell is DataGridViewButtonCell)
+                dataGridView.Cursor = Cursors.Hand;
+            else
+                dataGridView.Cursor = Cursors.Default;
         }
     }
 }

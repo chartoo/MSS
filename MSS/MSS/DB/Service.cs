@@ -15,7 +15,7 @@ namespace MSS.DB
         string INSERT = @"INSERT INTO services(`user_id`,`customer_id`,`category_id`,`model`,`imei`,`return_date`,`total`,`payment`,`remain`,`cleared`,`remain_type`,`remark`,`description`)
                         VALUES(@user_id,@customer_id,@category_id,@model,@imei,@return_date,@total,@payment,@remain,@cleared,@remain_type,@remark,@description)";
         string GET_ONE = @"SELECT * FROM services WHERE id=@id";
-        string EDIT = @"UPDATE categories 
+        string EDIT = @"UPDATE services 
                         SET name=@name,updated_at=@updated_at
                         WHERE id=@id";
         string DELETE = @"DELETE FROM categories WHERE id=@id";
@@ -79,7 +79,8 @@ namespace MSS.DB
                 cmd.Parameters.AddWithValue("@remain", service.Remain);
                 cmd.Parameters.AddWithValue("@cleared", service.Cleared);
                 cmd.Parameters.AddWithValue("@remain_type", service.RemainType);
-                cmd.Parameters.AddWithValue("@description", service.Description);
+            cmd.Parameters.AddWithValue("@remark", service.Remark);
+            cmd.Parameters.AddWithValue("@description", service.Description);
                 cmd.ExecuteNonQuery();
                 ConnectionManager.CloseConnection();
                 return true;
