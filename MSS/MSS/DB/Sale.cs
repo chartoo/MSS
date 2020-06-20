@@ -15,10 +15,24 @@ namespace MSS.DB
         string INSERT = @"INSERT INTO sales(`user_id`,`customer_id`,`category_id`,`model`,`imei`,`mass`,`item`,`sale_date`,`total`,`payment`,`remain`,`remain_type`,`cleared`,`description`)
                         VALUES(@user_id,@customer_id,@category_id,@model,@imei,@mass,@item,@sale_date,@total,@payment,@remain,@remain_type,@cleared,@description)";
         string GET_ONE = @"SELECT * FROM sales WHERE id=@id";
-        string EDIT = @"UPDATE categories 
-                        SET name=@name,updated_at=@updated_at
-                        WHERE id=@id";
-        string DELETE = @"DELETE FROM categories WHERE id=@id";
+        string EDIT = @"UPDATE sales 
+                        SET user_id=@user_id,
+                            customer_id=@customer_id,
+                            category_id=@category_id,
+                            model=@model,
+                            imei=@imei,
+                            mass=@mass,
+                            item=@item,
+                            sale_date=@sale_date,
+                            total=@total,
+                            payment=@payment,
+                            remain=@remain,
+                            remain_type=@remain_type,
+                            cleared=@cleared,
+                            description=@description,
+                            updated_at=@updated_at
+                            WHERE id=@id";
+        string DELETE = @"DELETE FROM sales WHERE id=@id";
         string FILTER = @"SELECT * FROM categories WHERE name LIKE @name order by name";
 
 
@@ -92,27 +106,78 @@ namespace MSS.DB
                 return false;
             }
 }
-        public DO.Customer SHOW(int id)
+        public DO.Sale SHOW(int id)
         {
-            DO.Customer customer = new DO.Customer();
-            SQLiteCommand cmd = new SQLiteCommand(GET_ONE, con);
+            DO.Sale sale = new DO.Sale();
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand(GET_ONE, con);
+                ConnectionManager.OpenConnection();
+                cmd.Parameters.AddWithValue("@id", id);
+                SQLiteDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    sale.Id = Convert.ToInt16(rdr["id"]);
+                    sale.UserId = Convert.ToInt16(rdr["user_id"]);
+                    sale.CustomerId = Convert.ToInt16(rdr["customer_id"]);
+                    sale.CategoryId = Convert.ToInt16(rdr["category_id"]);
+                    sale.Model = rdr["model"].ToString();
+                    sale.Imei = rdr["imei"].ToString();
+                    sale.Mass = Convert.ToInt16(rdr["mass"]);
+                    sale.Item = Convert.ToInt16(rdr["item"]);
+                    sale.SaleDate = Convert.ToDateTime(rdr["sale_date"]);
+                    sale.Total = Convert.ToDouble(rdr["total"]);
+                    sale.Payment = Convert.ToDouble(rdr["payment"]);
+                    sale.Remain = Convert.ToDouble(rdr["remain"]);
+                    sale.RemainType = Convert.ToInt16(rdr["remain_type"]);
+                    sale.Description = rdr["description"].ToString();
+                    sale.Created_at = Convert.ToDateTime(rdr["created_at"]);
+                    sale.Updated_at = Convert.ToDateTime(rdr["updated_at"]);
+                }
+                rdr.Close();
+                ConnectionManager.CloseConnection();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Show Sale Error : ", e);
+            }
+
+            return sale;
+        }
+
+        public Boolean UPDATE(DO.Sale sale)
+        {
+            SQLiteCommand cmd = new SQLiteCommand(EDIT, con);
+            ConnectionManager.OpenConnection();
+            //@user_id,@customer_id,@category_id,@model,@imei,@mass,@item,@sale_date,@total,@payment,@remain,@remain_type,@cleared,@description
+            cmd.Parameters.AddWithValue("@id", sale.Id);
+            cmd.Parameters.AddWithValue("@user_id", sale.UserId);
+            cmd.Parameters.AddWithValue("@customer_id", sale.CustomerId);
+            cmd.Parameters.AddWithValue("@category_id", sale.CategoryId);
+            cmd.Parameters.AddWithValue("@model", sale.Model);
+            cmd.Parameters.AddWithValue("@imei", sale.Imei);
+            cmd.Parameters.AddWithValue("@mass", sale.Mass);
+            cmd.Parameters.AddWithValue("@item", sale.Item);
+            cmd.Parameters.AddWithValue("@sale_date", sale.SaleDate);
+            cmd.Parameters.AddWithValue("@total", sale.Total);
+            cmd.Parameters.AddWithValue("@payment", sale.Payment);
+            cmd.Parameters.AddWithValue("@remain", sale.Remain);
+            cmd.Parameters.AddWithValue("@remain_type", sale.RemainType);
+            cmd.Parameters.AddWithValue("@cleared", sale.Cleared);
+            cmd.Parameters.AddWithValue("@description", sale.Description);
+            cmd.Parameters.AddWithValue("@updated_at", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
+            cmd.ExecuteNonQuery();
+            ConnectionManager.CloseConnection();
+            return true;
+        }
+
+        public Boolean DESTROY(int id)
+        {
+            SQLiteCommand cmd = new SQLiteCommand(DELETE, con);
             ConnectionManager.OpenConnection();
             cmd.Parameters.AddWithValue("@id", id);
-            SQLiteDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                customer.Id = Convert.ToInt16(rdr["id"]);
-                customer.Name = rdr["name"].ToString();
-                customer.Gender = Convert.ToInt16(rdr["gender"]);
-                customer.Special = Convert.ToInt16(rdr["special"]);
-                customer.Phone1 = rdr["phone1"].ToString();
-                customer.Phone2 = rdr["phone2"].ToString();
-                customer.Address = rdr["address"].ToString();
-                customer.Description = rdr["description"].ToString();
-            }
-            rdr.Close();
-            ConnectionManager.CloseConnection();
-            return customer;
+            cmd.ExecuteNonQuery();
+            return true;
         }
     }
 }

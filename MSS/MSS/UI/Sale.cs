@@ -224,8 +224,7 @@ namespace MSS.UI
 
             if (cell is DataGridViewButtonCell)
             {
-                SaleEdit saleEdit = new SaleEdit();
-                saleEdit.ID = Convert.ToInt16(row.Cells["id"].Value);
+                SaleEdit saleEdit = new SaleEdit(Convert.ToInt16(row.Cells["id"].Value));
                 saleEdit.ShowDialog();
                 SHOW_ALL();
             }

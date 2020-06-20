@@ -25,8 +25,8 @@ namespace MSS.DB
         public List<DO.Service> ALL()
         {
             List<DO.Service> sales = new List<DO.Service>();
-            //try
-            //{
+            try
+            {
                 SQLiteCommand cmd = new SQLiteCommand(SELECT_ALL, con);
                 ConnectionManager.OpenConnection();
                 SQLiteDataReader rdr = cmd.ExecuteReader();
@@ -54,17 +54,17 @@ namespace MSS.DB
                 }
                 rdr.Close();
                 ConnectionManager.CloseConnection();
-        //}
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine("System GET ALL Sale records Error! \n", e);
-        //    }
+        }
+            catch (Exception e)
+            {
+                Console.WriteLine("System GET ALL Sale records Error! \n", e);
+            }
             return sales;
         }
         public Boolean STORE(DO.Service service)
         {
-            //try
-            //{
+            try
+            {
                 SQLiteCommand cmd = new SQLiteCommand(INSERT, con);
                 ConnectionManager.OpenConnection();
                 //(@user_id,@customer_id,@category_id,@model,@imei,@return_date,@total,@payment,@remain,@cleared,@remain_type,@remark,@description)
@@ -84,12 +84,12 @@ namespace MSS.DB
                 cmd.ExecuteNonQuery();
                 ConnectionManager.CloseConnection();
                 return true;
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine("Store Service Record Error! ", e);
-            //    return false;
-            //}
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Store Service Record Error! ", e);
+                return false;
+            }
         }
         public DO.Customer SHOW(int id)
         {

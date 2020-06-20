@@ -161,6 +161,12 @@
     <Compile Include="UI\Service.Designer.cs">
       <DependentUpon>Service.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ServiceEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ServiceEdit.Designer.cs">
+      <DependentUpon>ServiceEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="micross.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ServiceEdit.resx">
+      <DependentUpon>ServiceEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>

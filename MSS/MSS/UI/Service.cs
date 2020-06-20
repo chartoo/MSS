@@ -226,12 +226,14 @@ namespace MSS.UI
 
             if (cell is DataGridViewButtonCell)
             {
-                SaleEdit saleEdit = new SaleEdit();
-                saleEdit.ID = Convert.ToInt16(row.Cells["id"].Value);
-                saleEdit.ShowDialog();
+                ServiceEdit serviceEdit = new ServiceEdit();
+                serviceEdit.ShowDialog();
                 SHOW_ALL();
             }
         }
+
+       
+
         private void dgvService_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex < 0 || e.RowIndex < 0)
