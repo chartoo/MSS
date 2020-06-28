@@ -125,6 +125,7 @@ namespace MSS.UI
             foreach (var service in services)
             {
                 int row = dgvService.Rows.Add();
+                dgvService.Rows[row].Height = 35;
                 dgvService.Rows[row].Cells["no"].Value = row + 1;
                 dgvService.Rows[row].Cells["id"].Value = service.Id;
                 dgvService.Rows[row].Cells["return_date"].Value = service.ReturnDate.ToString("yyyy-MM-dd");
@@ -133,9 +134,9 @@ namespace MSS.UI
                 dgvService.Rows[row].Cells["imei"].Value = service.Imei;
                 dgvService.Rows[row].Cells["remark"].Value = service.Remark;
                 dgvService.Rows[row].Cells["total"].Value = service.Total;
-                dgvService.Rows[row].Cells["status"].Value = service.RemainType == 1 ? "မရှင်းလင်းသေး" : service.RemainType == 2 ? "ရှင်းလင်းပြီး" : "စရန်ပေးထားပြီး";
+                dgvService.Rows[row].Cells["status"].Value = service.Cleared == 0 ? "မရှင်းသေး" : service.Cleared == 1 ? "ရှင်းပြီး" : "စရန်ပေးပြီး";
                 dgvService.Rows[row].Cells["actions"].Value = "More";
-                total = +service.Total;
+                total += service.Total;
                 dgvService.Text = (row + 1).ToString();
             }
             txtServiceTotal.Text = total.ToString();

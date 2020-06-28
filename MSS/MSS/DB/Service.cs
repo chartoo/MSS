@@ -129,6 +129,7 @@ namespace MSS.DB
                     service.RemainType = Convert.ToInt16(rdr["remain_type"]);
                     service.Remark = rdr["remark"].ToString();
                     service.Description = rdr["description"].ToString();
+                    service.Cleared = Convert.ToInt16(rdr["cleared"]);
                     service.Created_at = Convert.ToDateTime(rdr["created_at"]);
                     service.Updated_at = Convert.ToDateTime(rdr["updated_at"]);
                 }
@@ -166,6 +167,22 @@ namespace MSS.DB
             cmd.ExecuteNonQuery();
             ConnectionManager.CloseConnection();
             return true;
+        }
+        public Boolean DESTROY(int id)
+        {
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand(DELETE, con);
+                ConnectionManager.OpenConnection();
+                 cmd.Parameters.AddWithValue("@id",id);
+                cmd.ExecuteNonQuery();
+                ConnectionManager.CloseConnection();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }

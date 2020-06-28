@@ -25,7 +25,7 @@ namespace MSS.UI
         }
         private void SHOW(int id)
         {
-            DO.Service service = new DB.Service().SHOW(id);
+            service = new DB.Service().SHOW(id);
             if (service != null)
             {
                 txtPhoneModel.Text = service.Model;
@@ -36,8 +36,10 @@ namespace MSS.UI
                 txtTotal.Text = service.Total.ToString();
                 txtPayment.Text = service.Payment.ToString();
                 txtReceivablePayable.Text = service.Remain.ToString();
+                rdbPreAmount.Checked = service.Cleared == 2 ? true : false;
                 rdbCleared.Checked = service.Cleared == 1 ? true : false;
                 rdbNotCleared.Checked = service.Cleared == 0 ? true : false;
+                
                 GetCategories(service.CategoryId);
                 GetCustomerInfo(service.CustomerId);
                 GetCasherInfo(service.UserId);
@@ -70,6 +72,9 @@ namespace MSS.UI
 
         private void btnCustomerDetail_Click(object sender, EventArgs e)
         {
+            AddCustomer customer = new AddCustomer();
+            customer.ID = service.CustomerId;
+            customer.ShowDialog();
 
         }
 
@@ -84,15 +89,15 @@ namespace MSS.UI
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            new DB.Service().UPDATE(getUpdateData());
-            ////if (new DB.Service().UPDATE(getUpdateData()))
-            ////{
-            ////    this.Close();
-            ////}
-            ////else
-            ////{
-            ////    MessageBox.Show("Error");
-            ////}
+           
+            if (getUpdateData()!=null && new DB.Service().UPDATE(getUpdateData()))
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Retry to update data!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
         private void txtPayment_TextChanged(object sender, EventArgs e)
         {
@@ -111,25 +116,66 @@ namespace MSS.UI
                 txtReceivablePayable.Text = (total - payment).ToString();
             }
         }
+
+        private void rdbPreAmount_CheckedChanged(object sender, EventArgs e)
+        {
+           cleared = 2;
+        }
+
+        private void rdbCleared_CheckedChanged(object sender, EventArgs e)
+        {
+           cleared = 1;
+        }
+
+        private void rdbNotCleared_CheckedChanged(object sender, EventArgs e)
+        {
+            cleared = 0;
+        }
+
+        private void btnNewCategory_Click(object sender, EventArgs e)
+        {
+            AddCategory category = new AddCategory();
+            category.ShowDialog();
+            GetCategories(service.CategoryId);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if(DialogResult.Yes==MessageBox.Show("Are you sure want to delete this data for "+lbCustomerName.Text+" (Total Price : "+service.Total+") ?","Question",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
+            {
+                if (new DB.Service().DESTROY(service.Id))
+                    this.Close();
+            }
+        }
+
         private DO.Service getUpdateData()
         {
-            DO.Service updateService = new DO.Service();
-            updateService.Id = service.Id;
-            updateService.UserId = service.UserId;
-            updateService.CustomerId = service.CustomerId;
-            updateService.CategoryId = (int)cmbCategory.SelectedValue;
-            updateService.Model = txtPhoneModel.Text;
-            updateService.Imei = txtIMEI.Text;
-            updateService.ReturnDate =dtpReturnDate.Value;
-            updateService.Remark = txtRemark.Text;
-            updateService.Total = Convert.ToDouble(txtTotal.Text);
-            updateService.Payment = Convert.ToDouble(txtPayment.Text);
-            updateService.Remain = Convert.ToDouble(txtReceivablePayable.Text);
-            updateService.Description = txtDescription.Text;
-            updateService.RemainType = remainType;
-            updateService.Cleared = rdbCleared.Checked == true ? 1 : 0;
+            try
+            {
+                DO.Service updateService = new DO.Service();
+                updateService.Id = service.Id;
+                updateService.UserId = service.UserId;
+                updateService.CustomerId = service.CustomerId;
+                updateService.CategoryId = (int)cmbCategory.SelectedValue;
+                updateService.Model = txtPhoneModel.Text;
+                updateService.Imei = txtIMEI.Text;
+                updateService.ReturnDate = dtpReturnDate.Value;
+                updateService.Remark = txtRemark.Text;
+                updateService.Total = Convert.ToDouble(txtTotal.Text);
+                updateService.Payment = Convert.ToDouble(txtPayment.Text);
+                updateService.Remain = Convert.ToDouble(txtReceivablePayable.Text);
+                updateService.Description = txtDescription.Text;
+                updateService.RemainType = remainType;
+                updateService.Cleared = cleared;
 
-            return updateService;
+                return updateService;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("PLease Fill of all Data");
+                return null;
+            }
+            
         }
     }
 }

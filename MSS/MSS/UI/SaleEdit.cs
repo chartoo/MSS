@@ -98,8 +98,12 @@ namespace MSS.UI
         {
             if(new DB.Sale().UPDATE(getUpdateData()))
             {
-                MessageBox.Show("Updated your changes data ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Updated your changes data ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Try agin your changes data ", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -135,6 +139,16 @@ namespace MSS.UI
             }
         }
 
+        private void rdbCleared_CheckedChanged(object sender, EventArgs e)
+        {
+            cleared = 1;
+        }
+
+        private void rdbNotCleared_CheckedChanged(object sender, EventArgs e)
+        {
+            cleared = 0;
+        }
+
         private DO.Sale getUpdateData()
         {
             DO.Sale updateSale = new DO.Sale();
@@ -151,9 +165,9 @@ namespace MSS.UI
             updateSale.Payment = Convert.ToDouble(txtPayment.Text);
             updateSale.Remain = Convert.ToDouble(txtReceivablePayable.Text);
             updateSale.Description = txtDescription.Text;
-            sale.RemainType = remainType;
-            sale.Cleared = rdbCleared.Checked == true ? 1 : 0;
-            
+            updateSale.RemainType = remainType;
+            updateSale.Cleared =cleared;
+
             return updateSale;
         }
     }

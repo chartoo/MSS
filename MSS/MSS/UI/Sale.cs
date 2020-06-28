@@ -136,9 +136,9 @@ namespace MSS.UI
                 dgvSale.Rows[row].Cells["imei"].Value = sale.Imei;
                 dgvSale.Rows[row].Cells["sale_type"].Value =(sale.Mass==1?"အလုံး ၊ ":"") + (sale.Item==1?"ဆက်ဆက်ပစ္စည်း":"");
                 dgvSale.Rows[row].Cells["total"].Value = sale.Total;
-                dgvSale.Rows[row].Cells["status"].Value = sale.Cleared==1?"မရှင်းလင်းသေး":"ရှင်းလင်းပြီး";
+                dgvSale.Rows[row].Cells["status"].Value = sale.Cleared != 0 ? "ရှင်းပြီး" : "မရှင်းရသေး";
                 dgvSale.Rows[row].Cells["actions"].Value = "More";
-                total = +sale.Total;
+                total += sale.Total;
                 dgvSale.Text = (row + 1).ToString();
             }
             txtSaleTotal.Text = total.ToString();
@@ -170,12 +170,12 @@ namespace MSS.UI
 
         private void rdbCleared_CheckedChanged(object sender, EventArgs e)
         {
-            cleared = 0;
+            cleared = 1;
         }
 
         private void rdbNotCleared_CheckedChanged(object sender, EventArgs e)
         {
-            cleared = 1;
+            cleared = 0;
         }
 
         private void txtPayment_TextChanged(object sender, EventArgs e)
@@ -230,10 +230,7 @@ namespace MSS.UI
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void dgvSale_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {

@@ -124,12 +124,13 @@
             // 
             this.btnNewCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCategory.Location = new System.Drawing.Point(342, 92);
+            this.btnNewCategory.Location = new System.Drawing.Point(342, 89);
             this.btnNewCategory.Name = "btnNewCategory";
             this.btnNewCategory.Size = new System.Drawing.Size(60, 28);
             this.btnNewCategory.TabIndex = 32;
             this.btnNewCategory.Text = "New";
             this.btnNewCategory.UseVisualStyleBackColor = true;
+            this.btnNewCategory.Click += new System.EventHandler(this.btnNewCategory_Click);
             // 
             // lbCustomerPhoneAddress
             // 
@@ -247,6 +248,7 @@
             this.btnDelete.TabIndex = 52;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panel1
             // 
@@ -374,6 +376,7 @@
             this.rdbPreAmount.TabStop = true;
             this.rdbPreAmount.Text = "စရန်ငွေ";
             this.rdbPreAmount.UseVisualStyleBackColor = true;
+            this.rdbPreAmount.CheckedChanged += new System.EventHandler(this.rdbPreAmount_CheckedChanged);
             // 
             // rdbNotCleared
             // 
@@ -386,6 +389,7 @@
             this.rdbNotCleared.TabIndex = 30;
             this.rdbNotCleared.Text = "မရှင်းလင်းရသေး";
             this.rdbNotCleared.UseVisualStyleBackColor = true;
+            this.rdbNotCleared.CheckedChanged += new System.EventHandler(this.rdbNotCleared_CheckedChanged);
             // 
             // rdbCleared
             // 
@@ -398,6 +402,7 @@
             this.rdbCleared.TabIndex = 28;
             this.rdbCleared.Text = "ရှင်းလင်းပြီး";
             this.rdbCleared.UseVisualStyleBackColor = true;
+            this.rdbCleared.CheckedChanged += new System.EventHandler(this.rdbCleared_CheckedChanged);
             // 
             // txtReceivablePayable
             // 
@@ -523,6 +528,7 @@
             this.ClientSize = new System.Drawing.Size(1052, 391);
             this.Controls.Add(this.panel1);
             this.Name = "ServiceEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MSS-ServiceEdit";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

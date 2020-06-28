@@ -199,6 +199,7 @@
             this.rdbNotCleared.TabIndex = 30;
             this.rdbNotCleared.Text = "မရှင်းလင်းရသေး";
             this.rdbNotCleared.UseVisualStyleBackColor = true;
+            this.rdbNotCleared.CheckedChanged += new System.EventHandler(this.rdbNotCleared_CheckedChanged);
             // 
             // label18
             // 
@@ -223,6 +224,7 @@
             this.rdbCleared.TabStop = true;
             this.rdbCleared.Text = "ရှင်းလင်းပြီး";
             this.rdbCleared.UseVisualStyleBackColor = true;
+            this.rdbCleared.CheckedChanged += new System.EventHandler(this.rdbCleared_CheckedChanged);
             // 
             // txtReceivablePayable
             // 
@@ -326,9 +328,9 @@
             // 
             this.panel3.Controls.Add(this.lbCasher);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(540, -2);
+            this.panel3.Location = new System.Drawing.Point(589, -2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(508, 84);
+            this.panel3.Size = new System.Drawing.Size(459, 84);
             this.panel3.TabIndex = 50;
             // 
             // lbCasher

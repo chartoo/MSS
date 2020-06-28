@@ -62,6 +62,7 @@ namespace MSS.DB
                         Remain=Convert.ToDouble(rdr["remain"]),
                         RemainType=Convert.ToInt16(rdr["remain_type"]),
                         Description = rdr["description"].ToString(),
+                        Cleared=Convert.ToInt16(rdr["cleared"]),
                         Created_at = Convert.ToDateTime(rdr["created_at"]),
                         Updated_at = Convert.ToDateTime(rdr["updated_at"])
                     });
@@ -131,6 +132,7 @@ namespace MSS.DB
                     sale.Remain = Convert.ToDouble(rdr["remain"]);
                     sale.RemainType = Convert.ToInt16(rdr["remain_type"]);
                     sale.Description = rdr["description"].ToString();
+                    sale.Cleared = Convert.ToInt16(rdr["cleared"]);
                     sale.Created_at = Convert.ToDateTime(rdr["created_at"]);
                     sale.Updated_at = Convert.ToDateTime(rdr["updated_at"]);
                 }
