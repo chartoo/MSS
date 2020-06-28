@@ -229,6 +229,12 @@ namespace MSS.UI
                 SHOW_ALL();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dgvSale_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex < 0 || e.RowIndex < 0)

@@ -16,10 +16,24 @@ namespace MSS.DB
                         VALUES(@user_id,@customer_id,@category_id,@model,@imei,@return_date,@total,@payment,@remain,@cleared,@remain_type,@remark,@description)";
         string GET_ONE = @"SELECT * FROM services WHERE id=@id";
         string EDIT = @"UPDATE services 
-                        SET name=@name,updated_at=@updated_at
+                        SET 
+                        user_id=@user_id,
+                        customer_id=@customer_id,
+                        category_id=@category_id,
+                        model=@model,
+                        imei=@imei,
+                        return_date=@return_date,
+                        total=@total,
+                        payment=@payment,
+                        remain=@remain,
+                        cleared=@cleared,
+                        remain_type=@remain_type,
+                        remark=@remark,
+                        description=@description,
+                        updated_at=@updated_at
                         WHERE id=@id";
-        string DELETE = @"DELETE FROM categories WHERE id=@id";
-        string FILTER = @"SELECT * FROM categories WHERE name LIKE @name order by name";
+        string DELETE = @"DELETE FROM services WHERE id=@id";
+        string FILTER = @"SELECT * FROM services WHERE name LIKE @name order by name";
 
 
         public List<DO.Service> ALL()
@@ -91,28 +105,67 @@ namespace MSS.DB
                 return false;
             }
         }
-        public DO.Customer SHOW(int id)
+        public DO.Service SHOW(int id)
         {
-            DO.Customer customer = new DO.Customer();
-            SQLiteCommand cmd = new SQLiteCommand(GET_ONE, con);
-            ConnectionManager.OpenConnection();
-            cmd.Parameters.AddWithValue("@id", id);
-            SQLiteDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
+            DO.Service service = new DO.Service();
+            try
             {
-                customer.Id = Convert.ToInt16(rdr["id"]);
-                customer.Name = rdr["name"].ToString();
-                customer.Gender = Convert.ToInt16(rdr["gender"]);
-                customer.Special = Convert.ToInt16(rdr["special"]);
-                customer.Phone1 = rdr["phone1"].ToString();
-                customer.Phone2 = rdr["phone2"].ToString();
-                customer.Address = rdr["address"].ToString();
-                customer.Description = rdr["description"].ToString();
+                SQLiteCommand cmd = new SQLiteCommand(GET_ONE, con);
+                ConnectionManager.OpenConnection();
+                cmd.Parameters.AddWithValue("@id", id);
+                SQLiteDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    service.Id = Convert.ToInt16(rdr["id"]);
+                    service.UserId = Convert.ToInt16(rdr["user_id"]);
+                    service.CustomerId = Convert.ToInt16(rdr["customer_id"]);
+                    service.CategoryId = Convert.ToInt16(rdr["category_id"]);
+                    service.Model = rdr["model"].ToString();
+                    service.Imei = rdr["imei"].ToString();
+                    service.ReturnDate = Convert.ToDateTime(rdr["return_date"]);
+                    service.Total = Convert.ToDouble(rdr["total"]);
+                    service.Payment = Convert.ToDouble(rdr["payment"]);
+                    service.Remain = Convert.ToDouble(rdr["remain"]);
+                    service.RemainType = Convert.ToInt16(rdr["remain_type"]);
+                    service.Remark = rdr["remark"].ToString();
+                    service.Description = rdr["description"].ToString();
+                    service.Created_at = Convert.ToDateTime(rdr["created_at"]);
+                    service.Updated_at = Convert.ToDateTime(rdr["updated_at"]);
+                }
+                rdr.Close();
+                ConnectionManager.CloseConnection();
             }
-            rdr.Close();
-            ConnectionManager.CloseConnection();
-            return customer;
+            catch (Exception e)
+            {
+                Console.WriteLine("Show Service Error : ", e);
+            }
+
+            return service;
         }
 
+        public Boolean UPDATE(DO.Service service)
+        {
+            SQLiteCommand cmd = new SQLiteCommand(EDIT, con);
+            ConnectionManager.OpenConnection();
+            //(@user_id,@customer_id,@category_id,@model,@imei,@return_date,@total,@payment,@remain,@cleared,@remain_type,@remark,@description)
+            cmd.Parameters.AddWithValue("@id", service.Id);
+            cmd.Parameters.AddWithValue("@user_id", service.UserId);
+            cmd.Parameters.AddWithValue("@customer_id", service.CustomerId);
+            cmd.Parameters.AddWithValue("@category_id", service.CategoryId);
+            cmd.Parameters.AddWithValue("@model", service.Model);
+            cmd.Parameters.AddWithValue("@imei", service.Imei);
+            cmd.Parameters.AddWithValue("@return_date", service.ReturnDate);
+            cmd.Parameters.AddWithValue("@total", service.Total);
+            cmd.Parameters.AddWithValue("@payment", service.Payment);
+            cmd.Parameters.AddWithValue("@remain", service.Remain);
+            cmd.Parameters.AddWithValue("@cleared", service.Cleared);
+            cmd.Parameters.AddWithValue("@remain_type", service.RemainType);
+            cmd.Parameters.AddWithValue("@remark", service.Remark);
+            cmd.Parameters.AddWithValue("@description", service.Description);
+            cmd.Parameters.AddWithValue("@updated_at", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
+            cmd.ExecuteNonQuery();
+            ConnectionManager.CloseConnection();
+            return true;
+        }
     }
 }

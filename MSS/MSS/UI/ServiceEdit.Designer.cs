@@ -30,18 +30,14 @@
         {
             this.txtIMEI = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.cbItem = new System.Windows.Forms.CheckBox();
-            this.cbMass = new System.Windows.Forms.CheckBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtPhoneModel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnNewCategory = new System.Windows.Forms.Button();
             this.lbCustomerPhoneAddress = new System.Windows.Forms.Label();
-            this.dtpSaleDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpReturnDate = new System.Windows.Forms.DateTimePicker();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.lbCustomerName = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,11 +46,14 @@
             this.lbCasher = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.rdbPreAmount = new System.Windows.Forms.RadioButton();
             this.rdbNotCleared = new System.Windows.Forms.RadioButton();
             this.rdbCleared = new System.Windows.Forms.RadioButton();
             this.txtReceivablePayable = new System.Windows.Forms.TextBox();
@@ -68,9 +67,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtRemark = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rdbPreAmount = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,7 +76,7 @@
             // txtIMEI
             // 
             this.txtIMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIMEI.Location = new System.Drawing.Point(199, 208);
+            this.txtIMEI.Location = new System.Drawing.Point(199, 172);
             this.txtIMEI.Name = "txtIMEI";
             this.txtIMEI.Size = new System.Drawing.Size(202, 24);
             this.txtIMEI.TabIndex = 41;
@@ -89,47 +85,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(145, 214);
+            this.label11.Location = new System.Drawing.Point(145, 178);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 23);
             this.label11.TabIndex = 40;
             this.label11.Text = "IMEI :";
-            // 
-            // cbItem
-            // 
-            this.cbItem.AutoSize = true;
-            this.cbItem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbItem.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbItem.Location = new System.Drawing.Point(265, 169);
-            this.cbItem.Name = "cbItem";
-            this.cbItem.Size = new System.Drawing.Size(116, 27);
-            this.cbItem.TabIndex = 39;
-            this.cbItem.Text = "ဆက်ဆက်ပစ္စည်း";
-            this.cbItem.UseVisualStyleBackColor = true;
-            // 
-            // cbMass
-            // 
-            this.cbMass.AutoSize = true;
-            this.cbMass.Checked = true;
-            this.cbMass.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbMass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbMass.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMass.Location = new System.Drawing.Point(199, 169);
-            this.cbMass.Name = "cbMass";
-            this.cbMass.Size = new System.Drawing.Size(60, 27);
-            this.cbMass.TabIndex = 38;
-            this.cbMass.Text = "အလုံး";
-            this.cbMass.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(113, 173);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 23);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Sale Type :";
             // 
             // label9
             // 
@@ -181,24 +141,24 @@
             this.lbCustomerPhoneAddress.TabIndex = 29;
             this.lbCustomerPhoneAddress.Text = "Customer Phone & Address";
             // 
-            // dtpSaleDate
+            // dtpReturnDate
             // 
-            this.dtpSaleDate.CustomFormat = "dd-MM-yyyy";
-            this.dtpSaleDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpSaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpSaleDate.Location = new System.Drawing.Point(200, 248);
-            this.dtpSaleDate.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
-            this.dtpSaleDate.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dtpSaleDate.Name = "dtpSaleDate";
-            this.dtpSaleDate.Size = new System.Drawing.Size(200, 24);
-            this.dtpSaleDate.TabIndex = 45;
+            this.dtpReturnDate.CustomFormat = "dd-MM-yyyy";
+            this.dtpReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpReturnDate.Location = new System.Drawing.Point(200, 212);
+            this.dtpReturnDate.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpReturnDate.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpReturnDate.Name = "dtpReturnDate";
+            this.dtpReturnDate.Size = new System.Drawing.Size(200, 24);
+            this.dtpReturnDate.TabIndex = 45;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(185, 249);
+            this.label23.Location = new System.Drawing.Point(185, 213);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(14, 16);
             this.label23.TabIndex = 44;
@@ -208,22 +168,11 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(114, 248);
+            this.label24.Location = new System.Drawing.Point(114, 212);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(72, 23);
+            this.label24.Size = new System.Drawing.Size(86, 23);
             this.label24.TabIndex = 43;
-            this.label24.Text = "Sale Date :";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(179, 173);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 16);
-            this.label12.TabIndex = 42;
-            this.label12.Text = "*";
+            this.label24.Text = "Return Date :";
             // 
             // lbCustomerName
             // 
@@ -264,6 +213,7 @@
             this.btnCustomerDetail.TabIndex = 47;
             this.btnCustomerDetail.Text = "Detail";
             this.btnCustomerDetail.UseVisualStyleBackColor = true;
+            this.btnCustomerDetail.Click += new System.EventHandler(this.btnCustomerDetail_Click);
             // 
             // label3
             // 
@@ -311,15 +261,11 @@
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.dtpSaleDate);
+            this.panel1.Controls.Add(this.dtpReturnDate);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtIMEI);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.cbItem);
-            this.panel1.Controls.Add(this.cbMass);
-            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtPhoneModel);
             this.panel1.Controls.Add(this.label5);
@@ -329,8 +275,27 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1052, 434);
+            this.panel1.Size = new System.Drawing.Size(1052, 391);
             this.panel1.TabIndex = 1;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemark.Location = new System.Drawing.Point(199, 249);
+            this.txtRemark.Multiline = true;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(285, 49);
+            this.txtRemark.TabIndex = 54;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(127, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 23);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Remark :";
             // 
             // btnCancel
             // 
@@ -357,11 +322,12 @@
             this.btnSave.TabIndex = 50;
             this.btnSave.Text = "Update";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(198, 350);
+            this.txtDescription.Location = new System.Drawing.Point(198, 314);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(286, 59);
@@ -371,7 +337,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(103, 351);
+            this.label22.Location = new System.Drawing.Point(103, 315);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(83, 23);
             this.label22.TabIndex = 48;
@@ -395,6 +361,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(474, 204);
             this.panel4.TabIndex = 47;
+            // 
+            // rdbPreAmount
+            // 
+            this.rdbPreAmount.AutoSize = true;
+            this.rdbPreAmount.Checked = true;
+            this.rdbPreAmount.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbPreAmount.Location = new System.Drawing.Point(96, 137);
+            this.rdbPreAmount.Name = "rdbPreAmount";
+            this.rdbPreAmount.Size = new System.Drawing.Size(67, 27);
+            this.rdbPreAmount.TabIndex = 32;
+            this.rdbPreAmount.TabStop = true;
+            this.rdbPreAmount.Text = "စရန်ငွေ";
+            this.rdbPreAmount.UseVisualStyleBackColor = true;
             // 
             // rdbNotCleared
             // 
@@ -461,6 +440,7 @@
             this.txtPayment.TabIndex = 25;
             this.txtPayment.Text = "0";
             this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPayment.TextChanged += new System.EventHandler(this.txtPayment_TextChanged);
             // 
             // label16
             // 
@@ -536,42 +516,11 @@
             this.label7.TabIndex = 50;
             this.label7.Text = "Casher :";
             // 
-            // txtRemark
-            // 
-            this.txtRemark.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRemark.Location = new System.Drawing.Point(199, 285);
-            this.txtRemark.Multiline = true;
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(285, 49);
-            this.txtRemark.TabIndex = 54;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(127, 281);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 23);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Remark :";
-            // 
-            // rdbPreAmount
-            // 
-            this.rdbPreAmount.AutoSize = true;
-            this.rdbPreAmount.Checked = true;
-            this.rdbPreAmount.Font = new System.Drawing.Font("Myanmar Text", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPreAmount.Location = new System.Drawing.Point(96, 137);
-            this.rdbPreAmount.Name = "rdbPreAmount";
-            this.rdbPreAmount.Size = new System.Drawing.Size(67, 27);
-            this.rdbPreAmount.TabIndex = 32;
-            this.rdbPreAmount.Text = "စရန်ငွေ";
-            this.rdbPreAmount.UseVisualStyleBackColor = true;
-            // 
             // ServiceEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 434);
+            this.ClientSize = new System.Drawing.Size(1052, 391);
             this.Controls.Add(this.panel1);
             this.Name = "ServiceEdit";
             this.Text = "MSS-ServiceEdit";
@@ -591,18 +540,14 @@
 
         private System.Windows.Forms.TextBox txtIMEI;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox cbItem;
-        private System.Windows.Forms.CheckBox cbMass;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPhoneModel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnNewCategory;
         private System.Windows.Forms.Label lbCustomerPhoneAddress;
-        private System.Windows.Forms.DateTimePicker dtpSaleDate;
+        private System.Windows.Forms.DateTimePicker dtpReturnDate;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbCustomerName;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Label label4;

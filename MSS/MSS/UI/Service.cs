@@ -226,13 +226,16 @@ namespace MSS.UI
 
             if (cell is DataGridViewButtonCell)
             {
-                ServiceEdit serviceEdit = new ServiceEdit();
+                ServiceEdit serviceEdit = new ServiceEdit(Convert.ToInt16(row.Cells["id"].Value));
                 serviceEdit.ShowDialog();
                 SHOW_ALL();
             }
         }
 
-       
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void dgvService_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
