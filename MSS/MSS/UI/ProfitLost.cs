@@ -25,5 +25,23 @@ namespace MSS.UI
         {
 
         }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void getYear()
+        {
+            cbYear.DataSource = null;
+            cbYear.Text = "select customer";
+            var dict = new Dictionary<int, string>();
+            foreach (var customer in new DB.Customer().ALL())
+            {
+                dict.Add(customer.Id, customer.Name);
+            }
+            cbYear.DataSource = new BindingSource(dict, null);
+            cbYear.DisplayMember = "Value";
+            cbYear.ValueMember = "Key";
+        }
     }
 }

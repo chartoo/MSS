@@ -66,7 +66,9 @@
     <Compile Include="DB\Category.cs" />
     <Compile Include="DB\ConnectionManager.cs" />
     <Compile Include="DB\Customer.cs" />
+    <Compile Include="DB\Dashboard.cs" />
     <Compile Include="DB\Migrations\Customer.cs" />
+    <Compile Include="DB\ProfitLose.cs" />
     <Compile Include="DB\Sale.cs" />
     <Compile Include="DB\Service.cs" />
     <Compile Include="DB\User.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="DO\Category.cs" />
     <Compile Include="DO\Customer.cs" />
     <Compile Include="DO\DataEncryptor.cs" />
+    <Compile Include="DO\ProfitLose.cs" />
     <Compile Include="DO\Sale.cs" />
     <Compile Include="DO\Service.cs" />
     <Compile Include="DO\User.cs" />

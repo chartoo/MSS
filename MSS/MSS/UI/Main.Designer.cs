@@ -68,23 +68,19 @@
             this.label25 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lbServiceIncome = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbCashbookExpense = new System.Windows.Forms.Label();
+            this.lbCashbookIncome = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbSaleIncome = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
@@ -364,6 +360,7 @@
             this.btnRecPay.TabIndex = 11;
             this.btnRecPay.Text = "ရရန်/ပေးရန်";
             this.btnRecPay.UseVisualStyleBackColor = true;
+            this.btnRecPay.Visible = false;
             this.btnRecPay.Click += new System.EventHandler(this.btnRecPay_Click);
             // 
             // btnProfit
@@ -376,6 +373,7 @@
             this.btnProfit.TabIndex = 10;
             this.btnProfit.Text = "အရှုံး/အမြတ်";
             this.btnProfit.UseVisualStyleBackColor = true;
+            this.btnProfit.Visible = false;
             this.btnProfit.Click += new System.EventHandler(this.btnProfit_Click);
             // 
             // btnCustomer
@@ -446,7 +444,7 @@
             this.btnDashbook.Name = "btnDashbook";
             this.btnDashbook.Size = new System.Drawing.Size(179, 39);
             this.btnDashbook.TabIndex = 5;
-            this.btnDashbook.Text = "Dashbook";
+            this.btnDashbook.Text = "Dashboard";
             this.btnDashbook.UseVisualStyleBackColor = true;
             this.btnDashbook.Click += new System.EventHandler(this.btnDashbook_Click);
             // 
@@ -525,9 +523,7 @@
             this.panel6.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label19);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.lbServiceIncome);
             this.panel6.Controls.Add(this.label23);
             this.panel6.Controls.Add(this.label24);
             this.panel6.Location = new System.Drawing.Point(582, 3);
@@ -546,37 +542,16 @@
             this.label19.TabIndex = 6;
             this.label19.Text = "ဝန်ဆောင်မှုမှ";
             // 
-            // label20
+            // lbServiceIncome
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(144, 57);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(102, 29);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "00000 MMK";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Green;
-            this.label21.Location = new System.Drawing.Point(144, 28);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(102, 29);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "00000 MMK";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(3, 57);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(135, 29);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "စုစုပေါင်း ထွက်ငွေ :";
+            this.lbServiceIncome.AutoSize = true;
+            this.lbServiceIncome.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbServiceIncome.ForeColor = System.Drawing.Color.Green;
+            this.lbServiceIncome.Location = new System.Drawing.Point(144, 28);
+            this.lbServiceIncome.Name = "lbServiceIncome";
+            this.lbServiceIncome.Size = new System.Drawing.Size(102, 29);
+            this.lbServiceIncome.TabIndex = 3;
+            this.lbServiceIncome.Text = "00000 MMK";
             // 
             // label23
             // 
@@ -603,8 +578,8 @@
             this.panel4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.lbCashbookExpense);
+            this.panel4.Controls.Add(this.lbCashbookIncome);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label8);
@@ -618,33 +593,33 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Myanmar Text", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Maroon;
-            this.label17.Location = new System.Drawing.Point(162, 0);
+            this.label17.Location = new System.Drawing.Point(124, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 27);
+            this.label17.Size = new System.Drawing.Size(118, 27);
             this.label17.TabIndex = 5;
-            this.label17.Text = "အားလုံး";
+            this.label17.Text = "နေ့စဉ်ငွေစာရင်းမှ";
             // 
-            // label11
+            // lbCashbookExpense
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(144, 57);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 29);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "00000 MMK";
+            this.lbCashbookExpense.AutoSize = true;
+            this.lbCashbookExpense.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCashbookExpense.ForeColor = System.Drawing.Color.Red;
+            this.lbCashbookExpense.Location = new System.Drawing.Point(144, 57);
+            this.lbCashbookExpense.Name = "lbCashbookExpense";
+            this.lbCashbookExpense.Size = new System.Drawing.Size(102, 29);
+            this.lbCashbookExpense.TabIndex = 4;
+            this.lbCashbookExpense.Text = "00000 MMK";
             // 
-            // label10
+            // lbCashbookIncome
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Green;
-            this.label10.Location = new System.Drawing.Point(144, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 29);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "00000 MMK";
+            this.lbCashbookIncome.AutoSize = true;
+            this.lbCashbookIncome.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCashbookIncome.ForeColor = System.Drawing.Color.Green;
+            this.lbCashbookIncome.Location = new System.Drawing.Point(144, 28);
+            this.lbCashbookIncome.Name = "lbCashbookIncome";
+            this.lbCashbookIncome.Size = new System.Drawing.Size(102, 29);
+            this.lbCashbookIncome.TabIndex = 3;
+            this.lbCashbookIncome.Text = "00000 MMK";
             // 
             // label9
             // 
@@ -660,7 +635,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Myanmar Text", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(62, 0);
+            this.label7.Location = new System.Drawing.Point(24, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 27);
             this.label7.TabIndex = 0;
@@ -681,9 +656,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.lbSaleIncome);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Location = new System.Drawing.Point(291, 3);
@@ -702,37 +675,16 @@
             this.label18.TabIndex = 6;
             this.label18.Text = "အ‌ရောင်းမှ";
             // 
-            // label12
+            // lbSaleIncome
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(144, 57);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 29);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "00000 MMK";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Green;
-            this.label13.Location = new System.Drawing.Point(144, 28);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(102, 29);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "00000 MMK";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 57);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(135, 29);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "စုစုပေါင်း ထွက်ငွေ :";
+            this.lbSaleIncome.AutoSize = true;
+            this.lbSaleIncome.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSaleIncome.ForeColor = System.Drawing.Color.Green;
+            this.lbSaleIncome.Location = new System.Drawing.Point(144, 28);
+            this.lbSaleIncome.Name = "lbSaleIncome";
+            this.lbSaleIncome.Size = new System.Drawing.Size(102, 29);
+            this.lbSaleIncome.TabIndex = 3;
+            this.lbSaleIncome.Text = "00000 MMK";
             // 
             // label15
             // 
@@ -832,19 +784,15 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lbServiceIncome;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbCashbookExpense;
+        private System.Windows.Forms.Label lbCashbookIncome;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbSaleIncome;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnLogout;

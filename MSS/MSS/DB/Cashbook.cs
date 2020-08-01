@@ -61,19 +61,27 @@ namespace MSS.DB
         }
         public Boolean STORE(DO.Cashbook cashbook)
         {
-            SQLiteCommand cmd = new SQLiteCommand(INSERT, con);
-            ConnectionManager.OpenConnection();
-            //@reason,@cash_type,@casher,@voucher,@description,@total,@date
-            cmd.Parameters.AddWithValue("@reason", cashbook.Reason);
-            cmd.Parameters.AddWithValue("@cash_type", cashbook.CashType);
-            cmd.Parameters.AddWithValue("@casher", cashbook.Casher);
-            cmd.Parameters.AddWithValue("@voucher", cashbook.Voucher);
-            cmd.Parameters.AddWithValue("@description", cashbook.Description);
-            cmd.Parameters.AddWithValue("@total", cashbook.Total);
-            cmd.Parameters.AddWithValue("@date", cashbook.Date);
-            cmd.ExecuteNonQuery();
-            ConnectionManager.CloseConnection();
-            return true;
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand(INSERT, con);
+                ConnectionManager.OpenConnection();
+                //@reason,@cash_type,@casher,@voucher,@description,@total,@date
+                cmd.Parameters.AddWithValue("@reason", cashbook.Reason);
+                cmd.Parameters.AddWithValue("@cash_type", cashbook.CashType);
+                cmd.Parameters.AddWithValue("@casher", cashbook.Casher);
+                cmd.Parameters.AddWithValue("@voucher", cashbook.Voucher);
+                cmd.Parameters.AddWithValue("@description", cashbook.Description);
+                cmd.Parameters.AddWithValue("@total", cashbook.Total);
+                cmd.Parameters.AddWithValue("@date", cashbook.Date);
+                cmd.ExecuteNonQuery();
+                ConnectionManager.CloseConnection();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+           
         }
         public DO.Cashbook SHOW(int id)
         {

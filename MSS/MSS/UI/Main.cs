@@ -18,6 +18,7 @@ namespace MSS
         {
             InitializeComponent();
             AddChartValue();
+            TotalAmount();
         }
 
         private void btnCashbook_Click(object sender, EventArgs e)
@@ -112,6 +113,13 @@ namespace MSS
                 new Login().Show();
                 this.Hide();
             }
+        }
+        private void TotalAmount()
+        {
+            lbCashbookIncome.Text = new DB.Dashboard().CashbookIncome().ToString();
+            lbCashbookExpense.Text = new DB.Dashboard().CashbookExpense().ToString();
+            lbSaleIncome.Text = new DB.Dashboard().SaleIncome().ToString();
+            lbServiceIncome.Text = new DB.Dashboard().ServiceIncome().ToString();
         }
     }
 }
