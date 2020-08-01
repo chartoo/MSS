@@ -177,6 +177,7 @@ namespace MSS.UI
         }
         private void rdbPreAmount_CheckedChanged(object sender, EventArgs e)
         {
+            
             cleared = 0;
             remainType = 1;
         }
@@ -236,6 +237,41 @@ namespace MSS.UI
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFilterSearch_Click(object sender, EventArgs e)
+        {
+            int all = rdbFilterAll.Checked ? 1 : 0;
+            int cleared = rdbFilterCleared.Checked ? 1 : 0;
+            int notCleared = rdbFilterNotCleared.Checked ? 1 : 0;
+            if (dtpFilterFrom.Value < dtpFilterTo.Value)
+            {
+                double total = 0;
+                List<DO.Service> services = new DB.Service().SEARCH(dtpFilterFrom.Value, dtpFilterTo.Value, all, cleared, notCleared);
+                dgvService.Rows.Clear();
+                foreach (var service in services)
+                {
+                    int row = dgvService.Rows.Add();
+                    dgvService.Rows[row].Height = 35;
+                    dgvService.Rows[row].Cells["no"].Value = row + 1;
+                    dgvService.Rows[row].Cells["id"].Value = service.Id;
+                    dgvService.Rows[row].Cells["return_date"].Value = service.ReturnDate.ToString("yyyy-MM-dd");
+                    dgvService.Rows[row].Cells["customer"].Value = new DB.Customer().SHOW(service.CustomerId).Name;
+                    dgvService.Rows[row].Cells["item"].Value = new DB.Category().SHOW(service.CategoryId).Name + "-" + service.Model;
+                    dgvService.Rows[row].Cells["imei"].Value = service.Imei;
+                    dgvService.Rows[row].Cells["remark"].Value = service.Remark;
+                    dgvService.Rows[row].Cells["total"].Value = service.Total;
+                    dgvService.Rows[row].Cells["status"].Value = service.Cleared == 0 ? "မရှင်းသေး" : service.Cleared == 1 ? "ရှင်းပြီး" : "စရန်ပေးပြီး";
+                    dgvService.Rows[row].Cells["actions"].Value = "More";
+                    total += service.Total;
+                    dgvService.Text = (row + 1).ToString();
+                }
+                txtServiceTotal.Text = total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please select correct Date Interval");
+            }
         }
 
         private void dgvService_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

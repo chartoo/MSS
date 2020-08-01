@@ -11,7 +11,7 @@ namespace MSS.DB
     {
         ConnectionManager ConnectionManager = new ConnectionManager();
         SQLiteConnection con = ConnectionManager.con;
-        string SELECT_ALL = @"SELECT * FROM sales ORDER BY id DESC";
+        string SELECT_ALL = @"SELECT * FROM sales ORDER BY created_at DESC";
         string INSERT = @"INSERT INTO sales(`user_id`,`customer_id`,`category_id`,`model`,`imei`,`mass`,`item`,`sale_date`,`total`,`payment`,`remain`,`remain_type`,`cleared`,`description`)
                         VALUES(@user_id,@customer_id,@category_id,@model,@imei,@mass,@item,@sale_date,@total,@payment,@remain,@remain_type,@cleared,@description)";
         string GET_ONE = @"SELECT * FROM sales WHERE id=@id";
@@ -33,7 +33,7 @@ namespace MSS.DB
                             updated_at=@updated_at
                             WHERE id=@id";
         string DELETE = @"DELETE FROM sales WHERE id=@id";
-        string FILTER = @"SELECT * FROM categories WHERE name LIKE @name order by name";
+        string FILTER = @"SELECT * FROM sales WHERE sale_date>=@from_date and sale_date<=@to_date ";
 
 
         public List<DO.Sale> ALL()
@@ -175,11 +175,75 @@ namespace MSS.DB
 
         public Boolean DESTROY(int id)
         {
-            SQLiteCommand cmd = new SQLiteCommand(DELETE, con);
-            ConnectionManager.OpenConnection();
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
-            return true;
+            try
+            {
+                SQLiteCommand cmd = new SQLiteCommand(DELETE, con);
+                ConnectionManager.OpenConnection();
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                return true;
+            }catch(Exception e)
+            {
+                Console.WriteLine("Error Delete ", e);
+                return false;
+            }
+            
+        }
+
+        public List<DO.Sale> SEARCH(DateTime fromDate,DateTime toDate,int all,int cleared,int notCleared)
+        {
+            //@"SELECT * FROM sales WHERE created_at>=@from_date and created_at<=to_date ORDER BY created_at DESC";
+            List<DO.Sale> sales = new List<DO.Sale>();
+            try
+            {
+                SQLiteCommand cmd;
+                if (cleared == 1)
+                {
+                    FILTER = FILTER + " and cleared=1";
+                    cmd = new SQLiteCommand(FILTER, con);
+                }
+                if (notCleared == 1)
+                {
+                    FILTER = FILTER + " and cleared=0";
+                    cmd = new SQLiteCommand(FILTER, con);
+                }
+                cmd = new SQLiteCommand(FILTER, con);
+                cmd.Parameters.AddWithValue("@from_date", fromDate);
+                cmd.Parameters.AddWithValue("@to_date", toDate);
+
+                ConnectionManager.OpenConnection();
+                SQLiteDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    sales.Add(new DO.Sale()
+                    {
+                        Id = Convert.ToInt16(rdr["id"]),
+                        UserId = Convert.ToInt16(rdr["user_id"]),
+                        CustomerId = Convert.ToInt16(rdr["customer_id"]),
+                        CategoryId = Convert.ToInt16(rdr["category_id"]),
+                        Model = rdr["model"].ToString(),
+                        Imei = rdr["imei"].ToString(),
+                        Mass = Convert.ToInt16(rdr["mass"]),
+                        Item = Convert.ToInt16(rdr["item"]),
+                        SaleDate = Convert.ToDateTime(rdr["sale_date"]),
+                        Total = Convert.ToDouble(rdr["total"]),
+                        Payment = Convert.ToDouble(rdr["payment"]),
+                        Remain = Convert.ToDouble(rdr["remain"]),
+                        RemainType = Convert.ToInt16(rdr["remain_type"]),
+                        Description = rdr["description"].ToString(),
+                        Cleared = Convert.ToInt16(rdr["cleared"]),
+                        Created_at = Convert.ToDateTime(rdr["created_at"]),
+                        Updated_at = Convert.ToDateTime(rdr["updated_at"])
+                    });
+                }
+                rdr.Close();
+                ConnectionManager.CloseConnection();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("System GET Sale Search records Error! \n", e);
+            }
+            return sales;
         }
     }
 }

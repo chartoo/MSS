@@ -39,14 +39,26 @@
             this.txtTotalIncome = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvCashbookRecord = new System.Windows.Forms.DataGridView();
+            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cash_reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.voucher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.income = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.rbtnFilterAll = new System.Windows.Forms.RadioButton();
+            this.rbtnFilterExpense = new System.Windows.Forms.RadioButton();
+            this.rbtnFilterIncome = new System.Windows.Forms.RadioButton();
+            this.btnFilterSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -66,14 +78,6 @@
             this.rbtnExpense = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.voucher = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.income = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelCashbook.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashbookRecord)).BeginInit();
@@ -166,9 +170,10 @@
             this.dgvCashbookRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.no,
             this.date,
-            this.type,
+            this.cash_reason,
+            this.id,
             this.voucher,
-            this.remark,
+            this.description,
             this.income,
             this.exp,
             this.actions});
@@ -197,6 +202,74 @@
             this.dgvCashbookRecord.Size = new System.Drawing.Size(1245, 333);
             this.dgvCashbookRecord.TabIndex = 5;
             this.dgvCashbookRecord.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCashbookRecord_CellContentClick);
+            // 
+            // no
+            // 
+            this.no.FillWeight = 50F;
+            this.no.HeaderText = "No";
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            this.no.Width = 50;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // cash_reason
+            // 
+            this.cash_reason.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cash_reason.HeaderText = "အမျိုးအစား";
+            this.cash_reason.Name = "cash_reason";
+            this.cash_reason.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // voucher
+            // 
+            this.voucher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.voucher.HeaderText = "ဘောင်ချာ";
+            this.voucher.Name = "voucher";
+            this.voucher.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.description.HeaderText = "အကြောင်းအရာ";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // income
+            // 
+            this.income.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.income.HeaderText = "ဝင်ငွေ";
+            this.income.Name = "income";
+            this.income.ReadOnly = true;
+            // 
+            // exp
+            // 
+            this.exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.exp.HeaderText = "ထွက်ငွေ";
+            this.exp.Name = "exp";
+            this.exp.ReadOnly = true;
+            // 
+            // actions
+            // 
+            this.actions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.actions.DefaultCellStyle = dataGridViewCellStyle2;
+            this.actions.HeaderText = "လုပ်ဆောင်နိုင်ချက်";
+            this.actions.Name = "actions";
+            this.actions.ReadOnly = true;
+            this.actions.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.actions.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // groupBox1
             // 
@@ -227,29 +300,65 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.rbtnFilterAll);
+            this.panel1.Controls.Add(this.rbtnFilterExpense);
+            this.panel1.Controls.Add(this.rbtnFilterIncome);
+            this.panel1.Controls.Add(this.btnFilterSearch);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtpFilterFrom);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dtpFilterTo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(3, 167);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1239, 34);
             this.panel1.TabIndex = 4;
             // 
-            // button1
+            // rbtnFilterAll
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(610, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 31);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "ရှာမည်";
-            this.button1.UseVisualStyleBackColor = false;
+            this.rbtnFilterAll.AutoSize = true;
+            this.rbtnFilterAll.Checked = true;
+            this.rbtnFilterAll.Location = new System.Drawing.Point(630, 2);
+            this.rbtnFilterAll.Name = "rbtnFilterAll";
+            this.rbtnFilterAll.Size = new System.Drawing.Size(69, 27);
+            this.rbtnFilterAll.TabIndex = 35;
+            this.rbtnFilterAll.TabStop = true;
+            this.rbtnFilterAll.Text = "အားလုံး";
+            this.rbtnFilterAll.UseVisualStyleBackColor = true;
+            // 
+            // rbtnFilterExpense
+            // 
+            this.rbtnFilterExpense.AutoSize = true;
+            this.rbtnFilterExpense.Location = new System.Drawing.Point(705, 2);
+            this.rbtnFilterExpense.Name = "rbtnFilterExpense";
+            this.rbtnFilterExpense.Size = new System.Drawing.Size(72, 27);
+            this.rbtnFilterExpense.TabIndex = 2;
+            this.rbtnFilterExpense.Text = "ထွက်ငွေ";
+            this.rbtnFilterExpense.UseVisualStyleBackColor = true;
+            // 
+            // rbtnFilterIncome
+            // 
+            this.rbtnFilterIncome.AutoSize = true;
+            this.rbtnFilterIncome.Location = new System.Drawing.Point(783, 3);
+            this.rbtnFilterIncome.Name = "rbtnFilterIncome";
+            this.rbtnFilterIncome.Size = new System.Drawing.Size(60, 27);
+            this.rbtnFilterIncome.TabIndex = 2;
+            this.rbtnFilterIncome.Text = "ဝင်ငွေ";
+            this.rbtnFilterIncome.UseVisualStyleBackColor = true;
+            // 
+            // btnFilterSearch
+            // 
+            this.btnFilterSearch.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnFilterSearch.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFilterSearch.Location = new System.Drawing.Point(879, 1);
+            this.btnFilterSearch.Name = "btnFilterSearch";
+            this.btnFilterSearch.Size = new System.Drawing.Size(85, 31);
+            this.btnFilterSearch.TabIndex = 32;
+            this.btnFilterSearch.Text = "ရှာမည်";
+            this.btnFilterSearch.UseVisualStyleBackColor = false;
+            this.btnFilterSearch.Click += new System.EventHandler(this.btnFilterSearch_Click);
             // 
             // label1
             // 
@@ -274,17 +383,17 @@
             this.label7.TabIndex = 34;
             this.label7.Text = "မှ";
             // 
-            // dateTimePicker1
+            // dtpFilterFrom
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(353, 5);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(105, 21);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dtpFilterFrom.CustomFormat = "dd-MM-yyyy";
+            this.dtpFilterFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFilterFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFilterFrom.Location = new System.Drawing.Point(353, 5);
+            this.dtpFilterFrom.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpFilterFrom.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpFilterFrom.Name = "dtpFilterFrom";
+            this.dtpFilterFrom.Size = new System.Drawing.Size(105, 21);
+            this.dtpFilterFrom.TabIndex = 4;
             // 
             // label6
             // 
@@ -296,30 +405,30 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "ရက်စွဲ အလိုက်ရှာခြင်း";
             // 
-            // dateTimePicker2
+            // dtpFilterTo
             // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(486, 5);
-            this.dateTimePicker2.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker2.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(117, 21);
-            this.dateTimePicker2.TabIndex = 33;
+            this.dtpFilterTo.CustomFormat = "dd-MM-yyyy";
+            this.dtpFilterTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFilterTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFilterTo.Location = new System.Drawing.Point(486, 5);
+            this.dtpFilterTo.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpFilterTo.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpFilterTo.Name = "dtpFilterTo";
+            this.dtpFilterTo.Size = new System.Drawing.Size(117, 21);
+            this.dtpFilterTo.TabIndex = 33;
             // 
             // dtpDueDate
             // 
-            this.dtpDueDate.CustomFormat = "dd-MM-yyyy";
-            this.dtpDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDueDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDate.Location = new System.Drawing.Point(692, 72);
-            this.dtpDueDate.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+            this.dtpDueDate.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
             this.dtpDueDate.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(186, 22);
+            this.dtpDueDate.Size = new System.Drawing.Size(186, 24);
             this.dtpDueDate.TabIndex = 31;
-            this.dtpDueDate.Value = new System.DateTime(2020, 5, 4, 19, 38, 46, 0);
+            this.dtpDueDate.Value = new System.DateTime(2020, 7, 21, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -414,7 +523,7 @@
             this.panelType.Controls.Add(this.rbtnSale);
             this.panelType.Location = new System.Drawing.Point(5, 23);
             this.panelType.Name = "panelType";
-            this.panelType.Size = new System.Drawing.Size(151, 93);
+            this.panelType.Size = new System.Drawing.Size(164, 93);
             this.panelType.TabIndex = 5;
             // 
             // rbtnOther
@@ -426,6 +535,7 @@
             this.rbtnOther.TabIndex = 8;
             this.rbtnOther.Text = "အခြားကိစ္စများအတွက်";
             this.rbtnOther.UseVisualStyleBackColor = true;
+            this.rbtnOther.CheckedChanged += new System.EventHandler(this.rbtnOther_CheckedChanged);
             // 
             // rbtnService
             // 
@@ -433,11 +543,12 @@
             this.rbtnService.Checked = true;
             this.rbtnService.Location = new System.Drawing.Point(3, 33);
             this.rbtnService.Name = "rbtnService";
-            this.rbtnService.Size = new System.Drawing.Size(136, 27);
+            this.rbtnService.Size = new System.Drawing.Size(168, 27);
             this.rbtnService.TabIndex = 7;
             this.rbtnService.TabStop = true;
-            this.rbtnService.Text = "ပြင်ဆင် ခြင်းအတွက်";
+            this.rbtnService.Text = "ဝန်ဆောင်မှုပြုခြင်းအတွက် ";
             this.rbtnService.UseVisualStyleBackColor = true;
+            this.rbtnService.CheckedChanged += new System.EventHandler(this.rbtnService_CheckedChanged);
             // 
             // rbtnSale
             // 
@@ -448,13 +559,14 @@
             this.rbtnSale.TabIndex = 6;
             this.rbtnSale.Text = "‌ရောင်းချ ခြင်းအတွက်";
             this.rbtnSale.UseVisualStyleBackColor = true;
+            this.rbtnSale.CheckedChanged += new System.EventHandler(this.rbtnSale_CheckedChanged);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.rbtnIncome);
             this.panel2.Controls.Add(this.rbtnExpense);
-            this.panel2.Location = new System.Drawing.Point(158, 23);
+            this.panel2.Location = new System.Drawing.Point(171, 23);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(81, 93);
             this.panel2.TabIndex = 4;
@@ -465,11 +577,12 @@
             this.rbtnIncome.Checked = true;
             this.rbtnIncome.Location = new System.Drawing.Point(3, 4);
             this.rbtnIncome.Name = "rbtnIncome";
-            this.rbtnIncome.Size = new System.Drawing.Size(60, 27);
+            this.rbtnIncome.Size = new System.Drawing.Size(64, 27);
             this.rbtnIncome.TabIndex = 0;
             this.rbtnIncome.TabStop = true;
-            this.rbtnIncome.Text = "ငွေဝင်";
+            this.rbtnIncome.Text = " ဝင်ငွေ";
             this.rbtnIncome.UseVisualStyleBackColor = true;
+            this.rbtnIncome.CheckedChanged += new System.EventHandler(this.rbtnIncome_CheckedChanged);
             // 
             // rbtnExpense
             // 
@@ -478,8 +591,9 @@
             this.rbtnExpense.Name = "rbtnExpense";
             this.rbtnExpense.Size = new System.Drawing.Size(72, 27);
             this.rbtnExpense.TabIndex = 1;
-            this.rbtnExpense.Text = "ငွေထွက်";
+            this.rbtnExpense.Text = "ထွက်ငွေ";
             this.rbtnExpense.UseVisualStyleBackColor = true;
+            this.rbtnExpense.CheckedChanged += new System.EventHandler(this.rbtnExpense_CheckedChanged);
             // 
             // label3
             // 
@@ -498,67 +612,6 @@
             this.label2.Size = new System.Drawing.Size(100, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "စာရင်းကိုင်နာမည်";
-            // 
-            // no
-            // 
-            this.no.FillWeight = 50F;
-            this.no.HeaderText = "No";
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
-            this.no.Width = 50;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // type
-            // 
-            this.type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.type.HeaderText = "အမျိုးအစား";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            // 
-            // voucher
-            // 
-            this.voucher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.voucher.HeaderText = "ဘောင်ချာ";
-            this.voucher.Name = "voucher";
-            this.voucher.ReadOnly = true;
-            // 
-            // remark
-            // 
-            this.remark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.remark.HeaderText = "အကြောင်းအရာ";
-            this.remark.Name = "remark";
-            this.remark.ReadOnly = true;
-            // 
-            // income
-            // 
-            this.income.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.income.HeaderText = "ဝင်ငွေ";
-            this.income.Name = "income";
-            this.income.ReadOnly = true;
-            // 
-            // exp
-            // 
-            this.exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.exp.HeaderText = "ထွက်ငွေ";
-            this.exp.Name = "exp";
-            this.exp.ReadOnly = true;
-            // 
-            // actions
-            // 
-            this.actions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 2, 10, 2);
-            this.actions.DefaultCellStyle = dataGridViewCellStyle2;
-            this.actions.HeaderText = "လုပ်ဆောင်နိုင်ချက်";
-            this.actions.Name = "actions";
-            this.actions.ReadOnly = true;
-            this.actions.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.actions.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Cashbook
             // 
@@ -614,20 +667,24 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgvCashbookRecord;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFilterSearch;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFilterFrom;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpFilterTo;
         private System.Windows.Forms.DateTimePicker dtpDueDate;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton rbtnFilterExpense;
+        private System.Windows.Forms.RadioButton rbtnFilterIncome;
         private System.Windows.Forms.DataGridViewTextBoxColumn no;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cash_reason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn voucher;
-        private System.Windows.Forms.DataGridViewTextBoxColumn remark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn income;
         private System.Windows.Forms.DataGridViewTextBoxColumn exp;
         private System.Windows.Forms.DataGridViewButtonColumn actions;
+        private System.Windows.Forms.RadioButton rbtnFilterAll;
     }
 }

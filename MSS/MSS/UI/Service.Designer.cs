@@ -46,11 +46,15 @@
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actions = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.rdbFilterNotCleared = new System.Windows.Forms.RadioButton();
+            this.rdbFilterCleared = new System.Windows.Forms.RadioButton();
+            this.rdbFilterAll = new System.Windows.Forms.RadioButton();
+            this.btnFilterSearch = new System.Windows.Forms.Button();
             this.panelServiceForm = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
@@ -98,6 +102,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panelServiceForm.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -114,7 +119,7 @@
             this.panelService.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelService.Location = new System.Drawing.Point(0, 0);
             this.panelService.Name = "panelService";
-            this.panelService.Size = new System.Drawing.Size(1082, 603);
+            this.panelService.Size = new System.Drawing.Size(1143, 603);
             this.panelService.TabIndex = 0;
             // 
             // panel5
@@ -125,7 +130,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(337, 563);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(745, 40);
+            this.panel5.Size = new System.Drawing.Size(806, 40);
             this.panel5.TabIndex = 4;
             // 
             // txtServiceTotal
@@ -185,7 +190,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvService.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvService.RowHeadersVisible = false;
-            this.dgvService.Size = new System.Drawing.Size(745, 559);
+            this.dgvService.Size = new System.Drawing.Size(806, 559);
             this.dgvService.TabIndex = 3;
             this.dgvService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvService_CellContentClick);
             this.dgvService.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvService_CellMouseEnter);
@@ -263,74 +268,122 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.dateTimePicker2);
-            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Controls.Add(this.dtpFilterTo);
+            this.panel4.Controls.Add(this.dtpFilterFrom);
             this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Controls.Add(this.btnFilterSearch);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(337, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(745, 44);
+            this.panel4.Size = new System.Drawing.Size(806, 44);
             this.panel4.TabIndex = 1;
             // 
-            // button5
+            // dtpFilterTo
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(478, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 29);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "ရှာမည်";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.dtpFilterTo.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFilterTo.CustomFormat = "yyyy-MM-dd";
+            this.dtpFilterTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFilterTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFilterTo.Location = new System.Drawing.Point(318, 10);
+            this.dtpFilterTo.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpFilterTo.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpFilterTo.Name = "dtpFilterTo";
+            this.dtpFilterTo.Size = new System.Drawing.Size(103, 21);
+            this.dtpFilterTo.TabIndex = 9;
             // 
-            // dateTimePicker2
+            // dtpFilterFrom
             // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(327, 11);
-            this.dateTimePicker2.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker2.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(127, 24);
-            this.dateTimePicker2.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(180, 11);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 24);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpFilterFrom.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFilterFrom.CustomFormat = "yyyy-MM-dd";
+            this.dtpFilterFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFilterFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFilterFrom.Location = new System.Drawing.Point(178, 10);
+            this.dtpFilterFrom.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.dtpFilterFrom.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
+            this.dtpFilterFrom.Name = "dtpFilterFrom";
+            this.dtpFilterFrom.Size = new System.Drawing.Size(103, 21);
+            this.dtpFilterFrom.TabIndex = 8;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(307, 13);
+            this.label20.Location = new System.Drawing.Point(297, 10);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(18, 21);
-            this.label20.TabIndex = 1;
+            this.label20.TabIndex = 7;
             this.label20.Text = "မှ";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(6, 11);
+            this.label19.Location = new System.Drawing.Point(4, 10);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(174, 21);
-            this.label19.TabIndex = 0;
+            this.label19.TabIndex = 6;
             this.label19.Text = "ရက်စွဲ အလိုက် စစ်ဆေးကြည့်ရန်  :";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.rdbFilterNotCleared);
+            this.panel6.Controls.Add(this.rdbFilterCleared);
+            this.panel6.Controls.Add(this.rdbFilterAll);
+            this.panel6.Location = new System.Drawing.Point(429, 2);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(255, 40);
+            this.panel6.TabIndex = 11;
+            // 
+            // rdbFilterNotCleared
+            // 
+            this.rdbFilterNotCleared.AutoSize = true;
+            this.rdbFilterNotCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFilterNotCleared.Location = new System.Drawing.Point(158, 7);
+            this.rdbFilterNotCleared.Name = "rdbFilterNotCleared";
+            this.rdbFilterNotCleared.Size = new System.Drawing.Size(81, 24);
+            this.rdbFilterNotCleared.TabIndex = 5;
+            this.rdbFilterNotCleared.Text = " မရှင်းသေး";
+            this.rdbFilterNotCleared.UseVisualStyleBackColor = true;
+            // 
+            // rdbFilterCleared
+            // 
+            this.rdbFilterCleared.AutoSize = true;
+            this.rdbFilterCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFilterCleared.Location = new System.Drawing.Point(96, 6);
+            this.rdbFilterCleared.Name = "rdbFilterCleared";
+            this.rdbFilterCleared.Size = new System.Drawing.Size(61, 24);
+            this.rdbFilterCleared.TabIndex = 4;
+            this.rdbFilterCleared.Text = "ရှင်းပြီး";
+            this.rdbFilterCleared.UseVisualStyleBackColor = true;
+            // 
+            // rdbFilterAll
+            // 
+            this.rdbFilterAll.AutoSize = true;
+            this.rdbFilterAll.Checked = true;
+            this.rdbFilterAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFilterAll.Location = new System.Drawing.Point(21, 5);
+            this.rdbFilterAll.Name = "rdbFilterAll";
+            this.rdbFilterAll.Size = new System.Drawing.Size(69, 24);
+            this.rdbFilterAll.TabIndex = 3;
+            this.rdbFilterAll.TabStop = true;
+            this.rdbFilterAll.Text = " အားလုံး";
+            this.rdbFilterAll.UseVisualStyleBackColor = true;
+            // 
+            // btnFilterSearch
+            // 
+            this.btnFilterSearch.BackColor = System.Drawing.Color.Salmon;
+            this.btnFilterSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilterSearch.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilterSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFilterSearch.Location = new System.Drawing.Point(690, 9);
+            this.btnFilterSearch.Name = "btnFilterSearch";
+            this.btnFilterSearch.Size = new System.Drawing.Size(108, 29);
+            this.btnFilterSearch.TabIndex = 10;
+            this.btnFilterSearch.Text = "ရှာမည်";
+            this.btnFilterSearch.UseVisualStyleBackColor = false;
+            this.btnFilterSearch.Click += new System.EventHandler(this.btnFilterSearch_Click);
             // 
             // panelServiceForm
             // 
@@ -822,7 +875,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 603);
+            this.ClientSize = new System.Drawing.Size(1143, 603);
             this.Controls.Add(this.panelService);
             this.Name = "Service";
             this.Text = "Service";
@@ -833,6 +886,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panelServiceForm.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -887,12 +942,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelSaleLayoutTop;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dgvService;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtServiceTotal;
@@ -912,5 +961,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewButtonColumn actions;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DateTimePicker dtpFilterTo;
+        private System.Windows.Forms.DateTimePicker dtpFilterFrom;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.RadioButton rdbFilterNotCleared;
+        private System.Windows.Forms.RadioButton rdbFilterCleared;
+        private System.Windows.Forms.RadioButton rdbFilterAll;
+        private System.Windows.Forms.Button btnFilterSearch;
     }
 }

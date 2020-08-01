@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\Cashbook.cs" />
     <Compile Include="DB\Category.cs" />
     <Compile Include="DB\ConnectionManager.cs" />
     <Compile Include="DB\Customer.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="DB\Sale.cs" />
     <Compile Include="DB\Service.cs" />
     <Compile Include="DB\User.cs" />
+    <Compile Include="DO\Cashbook.cs" />
     <Compile Include="DO\Category.cs" />
     <Compile Include="DO\Customer.cs" />
     <Compile Include="DO\DataEncryptor.cs" />
@@ -100,6 +102,12 @@
     </Compile>
     <Compile Include="UI\Cashbook.Designer.cs">
       <DependentUpon>Cashbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CashbookEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CashbookEdit.Designer.cs">
+      <DependentUpon>CashbookEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Category.cs">
       <SubType>Form</SubType>
@@ -193,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Cashbook.resx">
       <DependentUpon>Cashbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CashbookEdit.resx">
+      <DependentUpon>CashbookEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Category.resx">
       <DependentUpon>Category.cs</DependentUpon>

@@ -109,20 +109,28 @@ namespace MSS.UI
 
         private void txtPayment_TextChanged(object sender, EventArgs e)
         {
-            double total = Convert.ToDouble(txtTotal.Text);
-            double payment = Convert.ToDouble(txtPayment.Text);
-            if (total < payment)
+            try
             {
-                remainType = 1;
-                lbRecPay.Text = "ပေးရန် ကျန်ငွေ ကို  :";
-                txtReceivablePayable.Text = (payment - total).ToString();
-            }
-            else
+                double total = Convert.ToDouble(txtTotal.Text);
+                double payment = Convert.ToDouble(txtPayment.Text);
+                if (total < payment)
+                {
+                    remainType = 1;
+                    lbRecPay.Text = "ပေးရန် ကျန်ငွေ ကို  :";
+                    txtReceivablePayable.Text = (payment - total).ToString();
+                }
+                else
+                {
+                    remainType = 0;
+                    lbRecPay.Text = "ရရန် ကျန်ငွေ ကို  :";
+                    txtReceivablePayable.Text = (total - payment).ToString();
+                }
+            } catch(Exception exc)
             {
-                remainType = 0;
-                lbRecPay.Text = "ရရန် ကျန်ငွေ ကို  :";
-                txtReceivablePayable.Text = (total - payment).ToString();
+                MessageBox.Show("Please try again! \n Type correct format \n" + exc.ToString());
+
             }
+           
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

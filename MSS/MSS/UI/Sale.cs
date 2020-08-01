@@ -230,7 +230,39 @@ namespace MSS.UI
             }
         }
 
-       
+        private void btnFilterSearch_Click(object sender, EventArgs e)
+        {
+            int all = rdbFilterAll.Checked ? 1 : 0;
+            int cleared =rdbFilterCleared.Checked ? 1 : 0;
+            int notCleared =rdbFilterNotCleared.Checked ? 1: 0;
+            if( dtpFilterFrom.Value < dtpFilterTo.Value )
+            {
+                double total = 0;
+                List<DO.Sale> sales = new DB.Sale().SEARCH(dtpFilterFrom.Value,dtpFilterTo.Value,all,cleared,notCleared );
+                dgvSale.Rows.Clear();
+                foreach (var sale in sales)
+                {
+                    int row = dgvSale.Rows.Add();
+                    dgvSale.Rows[row].Cells["no"].Value = row + 1;
+                    dgvSale.Rows[row].Cells["id"].Value = sale.Id;
+                    dgvSale.Rows[row].Cells["sale_date"].Value = sale.SaleDate.ToString("yyyy-MM-dd");
+                    dgvSale.Rows[row].Cells["customer"].Value = new DB.Customer().SHOW(sale.CustomerId).Name;
+                    dgvSale.Rows[row].Cells["item"].Value = new DB.Category().SHOW(sale.CategoryId).Name + "-" + sale.Model;
+                    dgvSale.Rows[row].Cells["imei"].Value = sale.Imei;
+                    dgvSale.Rows[row].Cells["sale_type"].Value = (sale.Mass == 1 ? "အလုံး  " : "") + (sale.Item == 1 ? "၊ ဆက်ဆက်ပစ္စည်း" : "");
+                    dgvSale.Rows[row].Cells["total"].Value = sale.Total;
+                    dgvSale.Rows[row].Cells["status"].Value = sale.Cleared != 0 ? "ရှင်းပြီး" : "မရှင်းရသေး";
+                    dgvSale.Rows[row].Cells["actions"].Value = "More";
+                    total += sale.Total;
+                    dgvSale.Text = (row + 1).ToString();
+                }
+                txtSaleTotal.Text = total.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please select correct Date Interval");
+            }
+        }
 
         private void dgvSale_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
