@@ -29,14 +29,13 @@ D:\Projects\MyProjects\MSS\MSS\MSS\obj\Debug\MSS.UI.AddUser.resources
 D:\Projects\MyProjects\MSS\MSS\MSS\obj\Debug\MSS.UI.UserList.resources
 D:\Projects\MyProjects\MSS\MSS\MSS\obj\Debug\MSS.UI.SaleEdit.resources
 D:\Projects\MyProjects\MSS\MSS\MSS\obj\Debug\MSS.UI.ServiceEdit.resources
+D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\MSS.exe
+D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\System.Data.SQLite.dll
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\mmrtext.ttf
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\micross.ttf
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\packages.config
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\MSS.exe.config
-D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\MSS.exe
-D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\MSS.pdb
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\Newtonsoft.Json.dll
-D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\System.Data.SQLite.dll
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\System.Data.SQLite.xml
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\System.Data.SQLite.dll.config
@@ -63,4 +62,4 @@ D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.csproj.CoreCompileInputs.cache
 D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.csproj.CopyComplete
 D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.exe
 D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.pdb
-D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.csprojAssemblyReference.cache
+D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\MSS.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MSS.DO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,17 @@ namespace MSS.UI
     public partial class Sale : Form
     {
         int cleared = 0, remainType=0;
+        DataEncryptor keys = new DataEncryptor();
         public Sale()
         {
             InitializeComponent();
             
+        }
+        private void MaxDate()
+        {
+            DateTime maxDate = Convert.ToDateTime( keys.DecryptString("Ms6g1fQ06a3uCX7y9Iq0oHWrbEayc+vDZXq11lJsHOk="));
+
+            dtpSaleDate.MaxDate = maxDate;
         }
         public Panel SalePanel()
         {
@@ -262,6 +270,11 @@ namespace MSS.UI
             {
                 MessageBox.Show("Please select correct Date Interval");
             }
+        }
+
+        private void Sale_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void dgvSale_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

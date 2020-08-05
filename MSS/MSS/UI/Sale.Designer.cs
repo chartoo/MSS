@@ -48,6 +48,10 @@
             this.txtSaleTotal = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.rdbFilterNotCleared = new System.Windows.Forms.RadioButton();
+            this.rdbFilterCleared = new System.Windows.Forms.RadioButton();
+            this.rdbFilterAll = new System.Windows.Forms.RadioButton();
             this.btnFilterSearch = new System.Windows.Forms.Button();
             this.dtpFilterTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFilterFrom = new System.Windows.Forms.DateTimePicker();
@@ -97,21 +101,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelSaleLayoutTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.rdbFilterAll = new System.Windows.Forms.RadioButton();
-            this.rdbFilterCleared = new System.Windows.Forms.RadioButton();
-            this.rdbFilterNotCleared = new System.Windows.Forms.RadioButton();
             this.panelSale.SuspendLayout();
             this.panelSaleList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panelSaleLayout.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSaleLayoutTop.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSale
@@ -298,6 +298,51 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(784, 44);
             this.panel4.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.rdbFilterNotCleared);
+            this.panel6.Controls.Add(this.rdbFilterCleared);
+            this.panel6.Controls.Add(this.rdbFilterAll);
+            this.panel6.Location = new System.Drawing.Point(431, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(233, 40);
+            this.panel6.TabIndex = 5;
+            // 
+            // rdbFilterNotCleared
+            // 
+            this.rdbFilterNotCleared.AutoSize = true;
+            this.rdbFilterNotCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFilterNotCleared.Location = new System.Drawing.Point(169, 7);
+            this.rdbFilterNotCleared.Name = "rdbFilterNotCleared";
+            this.rdbFilterNotCleared.Size = new System.Drawing.Size(57, 24);
+            this.rdbFilterNotCleared.TabIndex = 5;
+            this.rdbFilterNotCleared.Text = "ကျန်ရှိ";
+            this.rdbFilterNotCleared.UseVisualStyleBackColor = true;
+            // 
+            // rdbFilterCleared
+            // 
+            this.rdbFilterCleared.AutoSize = true;
+            this.rdbFilterCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFilterCleared.Location = new System.Drawing.Point(78, 6);
+            this.rdbFilterCleared.Name = "rdbFilterCleared";
+            this.rdbFilterCleared.Size = new System.Drawing.Size(85, 24);
+            this.rdbFilterCleared.TabIndex = 4;
+            this.rdbFilterCleared.Text = "ရှင်းလင်းပြီး";
+            this.rdbFilterCleared.UseVisualStyleBackColor = true;
+            // 
+            // rdbFilterAll
+            // 
+            this.rdbFilterAll.AutoSize = true;
+            this.rdbFilterAll.Checked = true;
+            this.rdbFilterAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFilterAll.Location = new System.Drawing.Point(3, 5);
+            this.rdbFilterAll.Name = "rdbFilterAll";
+            this.rdbFilterAll.Size = new System.Drawing.Size(69, 24);
+            this.rdbFilterAll.TabIndex = 3;
+            this.rdbFilterAll.TabStop = true;
+            this.rdbFilterAll.Text = " အားလုံး";
+            this.rdbFilterAll.UseVisualStyleBackColor = true;
             // 
             // btnFilterSearch
             // 
@@ -869,50 +914,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "‌ရောင်းချခြင်းအတွက် ဖြည့်စွက်ပုံစံ";
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.rdbFilterNotCleared);
-            this.panel6.Controls.Add(this.rdbFilterCleared);
-            this.panel6.Controls.Add(this.rdbFilterAll);
-            this.panel6.Location = new System.Drawing.Point(431, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(233, 40);
-            this.panel6.TabIndex = 5;
-            // 
-            // rdbFilterAll
-            // 
-            this.rdbFilterAll.AutoSize = true;
-            this.rdbFilterAll.Checked = true;
-            this.rdbFilterAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFilterAll.Location = new System.Drawing.Point(3, 5);
-            this.rdbFilterAll.Name = "rdbFilterAll";
-            this.rdbFilterAll.Size = new System.Drawing.Size(69, 24);
-            this.rdbFilterAll.TabIndex = 3;
-            this.rdbFilterAll.Text = " အားလုံး";
-            this.rdbFilterAll.UseVisualStyleBackColor = true;
-            // 
-            // rdbFilterCleared
-            // 
-            this.rdbFilterCleared.AutoSize = true;
-            this.rdbFilterCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFilterCleared.Location = new System.Drawing.Point(78, 6);
-            this.rdbFilterCleared.Name = "rdbFilterCleared";
-            this.rdbFilterCleared.Size = new System.Drawing.Size(85, 24);
-            this.rdbFilterCleared.TabIndex = 4;
-            this.rdbFilterCleared.Text = "ရှင်းလင်းပြီး";
-            this.rdbFilterCleared.UseVisualStyleBackColor = true;
-            // 
-            // rdbFilterNotCleared
-            // 
-            this.rdbFilterNotCleared.AutoSize = true;
-            this.rdbFilterNotCleared.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFilterNotCleared.Location = new System.Drawing.Point(169, 7);
-            this.rdbFilterNotCleared.Name = "rdbFilterNotCleared";
-            this.rdbFilterNotCleared.Size = new System.Drawing.Size(57, 24);
-            this.rdbFilterNotCleared.TabIndex = 5;
-            this.rdbFilterNotCleared.Text = "ကျန်ရှိ";
-            this.rdbFilterNotCleared.UseVisualStyleBackColor = true;
-            // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -921,6 +922,7 @@
             this.Controls.Add(this.panelSale);
             this.Name = "Sale";
             this.Text = "Sale";
+            this.Load += new System.EventHandler(this.Sale_Load);
             this.panelSale.ResumeLayout(false);
             this.panelSaleList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).EndInit();
@@ -928,6 +930,8 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panelSaleLayout.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -937,8 +941,6 @@
             this.panel1.PerformLayout();
             this.panelSaleLayoutTop.ResumeLayout(false);
             this.panelSaleLayoutTop.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
