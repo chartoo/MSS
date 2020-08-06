@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="DB\Cashbook.cs" />
     <Compile Include="DB\Category.cs" />
+    <Compile Include="DB\Configuration.cs" />
     <Compile Include="DB\ConnectionManager.cs" />
     <Compile Include="DB\Customer.cs" />
     <Compile Include="DB\Dashboard.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="DB\User.cs" />
     <Compile Include="DO\Cashbook.cs" />
     <Compile Include="DO\Category.cs" />
+    <Compile Include="DO\Configuraion.cs" />
     <Compile Include="DO\Customer.cs" />
     <Compile Include="DO\DataEncryptor.cs" />
     <Compile Include="DO\ProfitLose.cs" />
@@ -99,6 +101,12 @@
     </Compile>
     <Compile Include="UI\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddValidCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddValidCode.Designer.cs">
+      <DependentUpon>AddValidCode.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Cashbook.cs">
       <SubType>Form</SubType>
@@ -154,6 +162,12 @@
     <Compile Include="UI\ReceivablePayable.Designer.cs">
       <DependentUpon>ReceivablePayable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Sale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +216,9 @@
     <EmbeddedResource Include="UI\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddValidCode.resx">
+      <DependentUpon>AddValidCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Cashbook.resx">
       <DependentUpon>Cashbook.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ReceivablePayable.resx">
       <DependentUpon>ReceivablePayable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>

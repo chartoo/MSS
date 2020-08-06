@@ -12,9 +12,10 @@ namespace MSS.UI
 {
     public partial class Login : Form
     {
+       
         public Login()
         {
-            InitializeComponent();
+             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

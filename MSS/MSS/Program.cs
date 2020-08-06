@@ -17,7 +17,13 @@ namespace MSS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            DO.Configuraion config = new DB.Configuration().GET();
+            if (config.MyId == null || config.MyId == "")
+                Application.Run(new Register());
+            else if (config.Code == null || config.Code == "")
+                Application.Run(new AddValidCode());
+            else
+                Application.Run(new Login());
         }
     }
 }

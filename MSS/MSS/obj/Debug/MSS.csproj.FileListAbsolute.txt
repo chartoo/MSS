@@ -63,3 +63,6 @@ D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.csproj.CopyComplete
 D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.exe
 D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.pdb
 D:\Projects\MSS\MSS\MSS\MSS\bin\Debug\MSS.pdb
+D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.csprojAssemblyReference.cache
+D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.UI.Register.resources
+D:\Projects\MSS\MSS\MSS\MSS\obj\Debug\MSS.UI.AddValidCode.resources
