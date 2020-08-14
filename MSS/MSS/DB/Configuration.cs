@@ -18,6 +18,7 @@ namespace MSS.DB
         string EDIT = @"UPDATE config 
                         SET name=@name,updated_at=@updated_at,person=@person,email=@email,phone=@phone,address=@address
                         WHERE my_id=@my_id";
+        string SET_CODE = @"UPDATE config SET code=@code WHERE my_id=@my_id";
         public DO.Configuraion GET()
         {
             DO.Configuraion configs = new DO.Configuraion() ;
@@ -70,6 +71,25 @@ namespace MSS.DB
                 Console.WriteLine("Store Config Error! ", e);
                 return false;
             }
+        }
+        public Boolean UPDATE_CODE(string my_id,string code)
+        {
+            //try
+            //{
+                SQLiteCommand cmd = new SQLiteCommand(SET_CODE, con);
+                ConnectionManager.OpenConnection();
+                //@my_id,@code
+                cmd.Parameters.AddWithValue("@my_id", my_id);
+                cmd.Parameters.AddWithValue("@code", code);
+                cmd.ExecuteNonQuery();
+                ConnectionManager.CloseConnection();
+                return true;
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Store Config Error! ", e);
+            //    return false;
+            //}
         }
     }
 }

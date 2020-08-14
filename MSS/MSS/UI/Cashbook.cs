@@ -145,6 +145,12 @@ namespace MSS.UI
             txtTotalIncome.Text = totalIncome.ToString();
             txtTotalExpense.Text = totalExpense.ToString();
         }
+
+        private void dtpDueDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void ClearInput()
         {
             txtCasher.Text="";

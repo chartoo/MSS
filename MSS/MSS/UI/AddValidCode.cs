@@ -35,13 +35,24 @@ namespace MSS.UI
         {
             if (!new DO.Configuraion().CheckForInternetConnection())
                 MessageBox.Show("Please Connect to the internet.", "Connection Error!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                if (new DB.Configuration().UPDATE_CODE(txtID.Text, txtCode.Text))
+                {
+                    this.Hide();
+                    new AddUser().Show();
+                    new Main().Show();
+                }
+            }
 
         }
 
         private void linkResendCode_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (!new DO.Configuraion().CheckForInternetConnection())
+            {
                 MessageBox.Show("Please Connect to the internet.", "Connection Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

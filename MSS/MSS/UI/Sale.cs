@@ -18,13 +18,20 @@ namespace MSS.UI
         public Sale()
         {
             InitializeComponent();
-            
+            MaxDate();
         }
         private void MaxDate()
         {
-            DateTime maxDate = Convert.ToDateTime( keys.DecryptString("Ms6g1fQ06a3uCX7y9Iq0oHWrbEayc+vDZXq11lJsHOk="));
+            try
+            {
+                string encrypt_key = new DB.Configuration().GET().Code;
+                DateTime maxDate = Convert.ToDateTime(keys.DecryptString(encrypt_key));
+                dtpSaleDate.MaxDate = maxDate;
+            }catch(Exception e)
+            {
+                dtpSaleDate.MaxDate = DateTime.Now;
+            }
 
-            dtpSaleDate.MaxDate = maxDate;
         }
         public Panel SalePanel()
         {

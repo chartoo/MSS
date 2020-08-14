@@ -65,6 +65,7 @@ namespace MSS.UI
                     UPDATE(user);
                 else
                     STROE(user);
+                this.Hide();
             }
         }
 

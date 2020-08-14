@@ -429,6 +429,7 @@
             this.dtpDueDate.Size = new System.Drawing.Size(186, 24);
             this.dtpDueDate.TabIndex = 31;
             this.dtpDueDate.Value = new System.DateTime(2020, 7, 21, 0, 0, 0, 0);
+            this.dtpDueDate.ValueChanged += new System.EventHandler(this.dtpDueDate_ValueChanged);
             // 
             // label4
             // 

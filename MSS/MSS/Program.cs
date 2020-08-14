@@ -23,7 +23,12 @@ namespace MSS
             else if (config.Code == null || config.Code == "")
                 Application.Run(new AddValidCode());
             else
-                Application.Run(new Login());
+            {
+               List<DO.User> users = new DB.User().ALL();
+                if (users != null && users.Count > 0)
+                    Application.Run(new Login());
+                else Application.Run(new AddUser());
+            }
         }
     }
 }
