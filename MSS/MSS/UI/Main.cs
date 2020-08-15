@@ -73,7 +73,8 @@ namespace MSS
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            currentTimer.Enabled = true;
+            currentTimer.Interval = 1000;
         }
 
         private void btnRecPay_Click(object sender, EventArgs e)
@@ -120,6 +121,12 @@ namespace MSS
             lbCashbookExpense.Text = new DB.Dashboard().CashbookExpense().ToString();
             lbSaleIncome.Text = new DB.Dashboard().SaleIncome().ToString();
             lbServiceIncome.Text = new DB.Dashboard().ServiceIncome().ToString();
+        }
+
+        private void currentTimer_Tick(object sender, EventArgs e)
+        {
+            lbcurrentDateLong.Text= DateTime.Now.ToString("dddd,MMMM dd-MM-yyyy");
+            lbCurrentTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
     }
 }

@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lbcurrentDateLong = new System.Windows.Forms.Label();
+            this.lbCurrentTime = new System.Windows.Forms.Label();
             this.btnCustomerShort = new System.Windows.Forms.Button();
             this.btnServiceShort = new System.Windows.Forms.Button();
             this.btnSaleShort = new System.Windows.Forms.Button();
@@ -83,6 +84,7 @@
             this.lbSaleIncome = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.currentTimer = new System.Windows.Forms.Timer(this.components);
             this.TopPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,8 +104,8 @@
             // TopPanel
             // 
             this.TopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TopPanel.Controls.Add(this.label27);
-            this.TopPanel.Controls.Add(this.label26);
+            this.TopPanel.Controls.Add(this.lbcurrentDateLong);
+            this.TopPanel.Controls.Add(this.lbCurrentTime);
             this.TopPanel.Controls.Add(this.btnCustomerShort);
             this.TopPanel.Controls.Add(this.btnServiceShort);
             this.TopPanel.Controls.Add(this.btnSaleShort);
@@ -116,26 +118,26 @@
             this.TopPanel.Size = new System.Drawing.Size(1108, 70);
             this.TopPanel.TabIndex = 0;
             // 
-            // label27
+            // lbcurrentDateLong
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(638, 40);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(164, 29);
-            this.label27.TabIndex = 6;
-            this.label27.Text = "2020-04-23 Monday";
+            this.lbcurrentDateLong.AutoSize = true;
+            this.lbcurrentDateLong.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcurrentDateLong.Location = new System.Drawing.Point(620, 34);
+            this.lbcurrentDateLong.Name = "lbcurrentDateLong";
+            this.lbcurrentDateLong.Size = new System.Drawing.Size(164, 29);
+            this.lbcurrentDateLong.TabIndex = 6;
+            this.lbcurrentDateLong.Text = "2020-04-23 Monday";
             // 
-            // label26
+            // lbCurrentTime
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Maroon;
-            this.label26.Location = new System.Drawing.Point(661, 6);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(110, 37);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "10:10 PM";
+            this.lbCurrentTime.AutoSize = true;
+            this.lbCurrentTime.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCurrentTime.ForeColor = System.Drawing.Color.Maroon;
+            this.lbCurrentTime.Location = new System.Drawing.Point(640, 2);
+            this.lbCurrentTime.Name = "lbCurrentTime";
+            this.lbCurrentTime.Size = new System.Drawing.Size(110, 37);
+            this.lbCurrentTime.TabIndex = 5;
+            this.lbCurrentTime.Text = "10:10 PM";
             // 
             // btnCustomerShort
             // 
@@ -479,20 +481,20 @@
             // 
             // chartIncome
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea3);
             this.chartIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartIncome.Location = new System.Drawing.Point(0, 144);
             this.chartIncome.Name = "chartIncome";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.Navy;
-            series1.MarkerBorderColor = System.Drawing.Color.Green;
-            series1.Name = "အရောင်းမှရရှိငွေ";
-            series2.ChartArea = "ChartArea1";
-            series2.Color = System.Drawing.Color.Green;
-            series2.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
-            this.chartIncome.Series.Add(series1);
-            this.chartIncome.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.Color = System.Drawing.Color.Navy;
+            series5.MarkerBorderColor = System.Drawing.Color.Green;
+            series5.Name = "အရောင်းမှရရှိငွေ";
+            series6.ChartArea = "ChartArea1";
+            series6.Color = System.Drawing.Color.Green;
+            series6.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
+            this.chartIncome.Series.Add(series5);
+            this.chartIncome.Series.Add(series6);
             this.chartIncome.Size = new System.Drawing.Size(921, 316);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "Income Status";
@@ -706,6 +708,10 @@
             this.label16.TabIndex = 1;
             this.label16.Text = "စုစုပေါင်း ဝင်ငွေ :";
             // 
+            // currentTimer
+            // 
+            this.currentTimer.Tick += new System.EventHandler(this.currentTimer_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 24F);
@@ -796,12 +802,13 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lbcurrentDateLong;
+        private System.Windows.Forms.Label lbCurrentTime;
         private System.Windows.Forms.Button btnCustomerShort;
         private System.Windows.Forms.Button btnServiceShort;
         private System.Windows.Forms.Button btnSaleShort;
         private System.Windows.Forms.Button btnUser;
+        private System.Windows.Forms.Timer currentTimer;
     }
 }
 
