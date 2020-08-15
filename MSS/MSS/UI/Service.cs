@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -183,8 +184,19 @@ namespace MSS.UI
         }
         private void txtPayment_TextChanged(object sender, EventArgs e)
         {
-            double total = Convert.ToDouble(txtTotal.Text);
-            double payment = Convert.ToDouble(txtPayment.Text);
+            double total = 0;
+            double payment = 0;
+            try
+            {
+                 total = Convert.ToDouble(txtTotal.Text);
+                 payment = Convert.ToDouble(txtPayment.Text);
+            }
+            catch(Exception exp)
+            {
+                 total = 0;
+                 payment = 0;
+            }
+           
             if (total < payment)
             {
                 remainType = 1;
@@ -244,7 +256,7 @@ namespace MSS.UI
             int all = rdbFilterAll.Checked ? 1 : 0;
             int cleared = rdbFilterCleared.Checked ? 1 : 0;
             int notCleared = rdbFilterNotCleared.Checked ? 1 : 0;
-            if (dtpFilterFrom.Value < dtpFilterTo.Value)
+            if (dtpFilterFrom.Value <= dtpFilterTo.Value)
             {
                 double total = 0;
                 List<DO.Service> services = new DB.Service().SEARCH(dtpFilterFrom.Value, dtpFilterTo.Value, all, cleared, notCleared);
@@ -272,6 +284,27 @@ namespace MSS.UI
             {
                 MessageBox.Show("Please select correct Date Interval");
             }
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(txtTotal.Text);
+            }catch(Exception exp)
+            {
+                txtTotal.Text = 0.ToString();
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtTotal.Text = 0.ToString();
+            txtPayment.Text = 0.ToString();
+            txtIMEI.Text = "";
+            txtPhoneModel.Text = "";
+            txtRemain.Text = "0";
+            txtRemark.Text = "";
         }
 
         private void dgvService_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

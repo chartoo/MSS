@@ -250,7 +250,7 @@ namespace MSS.UI
             int all = rdbFilterAll.Checked ? 1 : 0;
             int cleared =rdbFilterCleared.Checked ? 1 : 0;
             int notCleared =rdbFilterNotCleared.Checked ? 1: 0;
-            if( dtpFilterFrom.Value < dtpFilterTo.Value )
+            if( dtpFilterFrom.Value <= dtpFilterTo.Value )
             {
                 double total = 0;
                 List<DO.Sale> sales = new DB.Sale().SEARCH(dtpFilterFrom.Value,dtpFilterTo.Value,all,cleared,notCleared );

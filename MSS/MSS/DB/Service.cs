@@ -33,7 +33,7 @@ namespace MSS.DB
                         updated_at=@updated_at
                         WHERE id=@id";
         string DELETE = @"DELETE FROM services WHERE id=@id";
-        string FILTER = @"SELECT * FROM services WHERE return_date>=@from_date and return_date<=@to_date ";
+        string FILTER = @"SELECT * FROM services WHERE return_date >= @from_date and return_date <= @to_date ";
 
 
         public List<DO.Service> ALL()
@@ -202,8 +202,8 @@ namespace MSS.DB
                     cmd = new SQLiteCommand(FILTER, con);
                 }
                 cmd = new SQLiteCommand(FILTER, con);
-                cmd.Parameters.AddWithValue("@from_date", fromDate);
-                cmd.Parameters.AddWithValue("@to_date", toDate);
+                cmd.Parameters.AddWithValue("@from_date", fromDate.ToString("yyyy-MM-dd") + " 00:00:00");
+                cmd.Parameters.AddWithValue("@to_date", toDate.ToString("yyyy-MM-dd") + " 23:59:59");
 
                 ConnectionManager.OpenConnection();
                 SQLiteDataReader rdr = cmd.ExecuteReader();

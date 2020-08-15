@@ -125,30 +125,49 @@ namespace MSS.UI
             Boolean income = rbtnFilterIncome.Checked ? true : false;
             Boolean expense = rbtnFilterExpense.Checked ? true : false;
             double totalIncome = 0, totalExpense = 0;
-            List<DO.Cashbook> cashbooks = new DB.Cashbook().FILTER_SEARCH(dtpFilterFrom.Value,dtpFilterTo.Value,all,income,expense);
-            dgvCashbookRecord.Rows.Clear();
-            foreach (var cashbook in cashbooks)
+            try
             {
-                int row = dgvCashbookRecord.Rows.Add();
-                dgvCashbookRecord.Rows[row].Cells["no"].Value = row + 1;
-                dgvCashbookRecord.Rows[row].Cells["id"].Value = cashbook.Id;
-                dgvCashbookRecord.Rows[row].Cells["date"].Value = cashbook.Date.ToString("yyyy-MM-dd");
-                dgvCashbookRecord.Rows[row].Cells["cash_reason"].Value = (cashbook.Reason == 1 ? "ရောင်းချခြင်းအတွက် − " : cashbook.Reason == 2 ? "ဝန်ဆောင်မှုပြုခြင်းအတွက် - " : "တခြားကိစ္စအတွက် - ") + (cashbook.CashType == 0 ? "ဝင်ငွေ" : "ထွက်ငွေ");
-                dgvCashbookRecord.Rows[row].Cells["voucher"].Value = cashbook.Voucher;
-                dgvCashbookRecord.Rows[row].Cells["description"].Value = cashbook.Description;
-                dgvCashbookRecord.Rows[row].Cells["income"].Value = cashbook.CashType == 0 ? cashbook.Total : 0;
-                dgvCashbookRecord.Rows[row].Cells["exp"].Value = cashbook.CashType == 0 ? 0 : cashbook.Total;
-                dgvCashbookRecord.Rows[row].Cells["actions"].Value = "More";
-                totalIncome += cashbook.CashType == 0 ? cashbook.Total : 0;
-                totalExpense += cashbook.CashType == 1 ? cashbook.Total : 0;
+                List<DO.Cashbook> cashbooks = new DB.Cashbook().FILTER_SEARCH(dtpFilterFrom.Value, dtpFilterTo.Value, all, income, expense);
+                dgvCashbookRecord.Rows.Clear();
+                foreach (var cashbook in cashbooks)
+                {
+                    int row = dgvCashbookRecord.Rows.Add();
+                    dgvCashbookRecord.Rows[row].Cells["no"].Value = row + 1;
+                    dgvCashbookRecord.Rows[row].Cells["id"].Value = cashbook.Id;
+                    dgvCashbookRecord.Rows[row].Cells["date"].Value = cashbook.Date.ToString("yyyy-MM-dd");
+                    dgvCashbookRecord.Rows[row].Cells["cash_reason"].Value = (cashbook.Reason == 1 ? "ရောင်းချခြင်းအတွက် − " : cashbook.Reason == 2 ? "ဝန်ဆောင်မှုပြုခြင်းအတွက် - " : "တခြားကိစ္စအတွက် - ") + (cashbook.CashType == 0 ? "ဝင်ငွေ" : "ထွက်ငွေ");
+                    dgvCashbookRecord.Rows[row].Cells["voucher"].Value = cashbook.Voucher;
+                    dgvCashbookRecord.Rows[row].Cells["description"].Value = cashbook.Description;
+                    dgvCashbookRecord.Rows[row].Cells["income"].Value = cashbook.CashType == 0 ? cashbook.Total : 0;
+                    dgvCashbookRecord.Rows[row].Cells["exp"].Value = cashbook.CashType == 0 ? 0 : cashbook.Total;
+                    dgvCashbookRecord.Rows[row].Cells["actions"].Value = "More";
+                    totalIncome += cashbook.CashType == 0 ? cashbook.Total : 0;
+                    totalExpense += cashbook.CashType == 1 ? cashbook.Total : 0;
+                }
+                txtTotalIncome.Text = totalIncome.ToString();
+                txtTotalExpense.Text = totalExpense.ToString();
             }
-            txtTotalIncome.Text = totalIncome.ToString();
-            txtTotalExpense.Text = totalExpense.ToString();
+            catch(Exception exp)
+            {
+                MessageBox.Show("Please connect to support team.", "System Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void dtpDueDate_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToInt32(txtTotal.Text);
+            }catch(Exception exp)
+            {
+                txtTotal.Text = 0.ToString();
+            }
         }
 
         private void ClearInput()
