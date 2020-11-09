@@ -284,6 +284,11 @@ namespace MSS.UI
 
         }
 
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void dgvSale_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex < 0 || e.RowIndex < 0)

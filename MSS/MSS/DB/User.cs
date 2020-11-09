@@ -22,6 +22,7 @@ namespace MSS.DB
                         WHERE id=@id";
         string DELETE = @"DELETE FROM users WHERE id=@id";
         string FILTER = @"SELECT * FROM customers WHERE name LIKE @name AND phone1 LIKE @phone order by name";
+        string LOGIN = @"SELECT * FROM users WHERE password=@password";
 
         public List<DO.User> ALL()
         {
@@ -138,6 +139,24 @@ namespace MSS.DB
                 Console.WriteLine("User Deleting Error! ", e);
                 return false;
             }
+        }
+        public DO.Login Authenticate(string password)
+        {
+            DO.Login login = new DO.Login();
+            SQLiteCommand cmd = new SQLiteCommand(LOGIN, con);
+            ConnectionManager.OpenConnection();
+            cmd.Parameters.AddWithValue("@password", keys.EncryptString(password));
+            SQLiteDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                login.Name = rdr["name"].ToString();
+                login.Role = rdr["role"].ToString();
+                login.Phone = rdr["phone"].ToString();
+                login.Password = rdr["password"].ToString();
+            }
+            rdr.Close();
+             ConnectionManager.CloseConnection();
+            return login;
         }
     }
 }

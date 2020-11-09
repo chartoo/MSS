@@ -21,7 +21,13 @@ namespace MSS.UI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string password = txtPassword.Text;
-            if(password=="12345")
+            DO.Login.name = null;
+            DO.Login.role = null;
+            DO.Login.password = null;
+            DO.Login.phone = null;
+            DO.Login.id = 0;
+            DO.Login login = new DB.User().Authenticate(password);
+            if (login.Name!=null && login.Role != null)
             {
                 new Main().Show();
                 this.Hide();

@@ -79,7 +79,10 @@ namespace MSS.UI
         {
 
         }
-
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
         private void rbtnSale_CheckedChanged(object sender, EventArgs e)
         {
             reason=rbtnSale.Checked ? 1 : reason;
@@ -159,16 +162,7 @@ namespace MSS.UI
 
         }
 
-        private void txtTotal_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Convert.ToInt32(txtTotal.Text);
-            }catch(Exception exp)
-            {
-                txtTotal.Text = 0.ToString();
-            }
-        }
+       
 
         private void ClearInput()
         {

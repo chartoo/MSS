@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.lbcurrentDateLong = new System.Windows.Forms.Label();
             this.lbCurrentTime = new System.Windows.Forms.Label();
@@ -41,8 +41,8 @@
             this.btnSaleShort = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbUserRole = new System.Windows.Forms.Label();
+            this.lbUserName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -182,8 +182,8 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.btnLogout);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lbUserRole);
+            this.panel3.Controls.Add(this.lbUserName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(918, 0);
             this.panel3.Name = "panel3";
@@ -203,28 +203,28 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // label6
+            // lbUserRole
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Myanmar Text", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(62, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 24);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Admin Role";
+            this.lbUserRole.AutoSize = true;
+            this.lbUserRole.Font = new System.Drawing.Font("Myanmar Text", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserRole.ForeColor = System.Drawing.Color.Maroon;
+            this.lbUserRole.Location = new System.Drawing.Point(62, 22);
+            this.lbUserRole.Name = "lbUserRole";
+            this.lbUserRole.Size = new System.Drawing.Size(82, 24);
+            this.lbUserRole.TabIndex = 3;
+            this.lbUserRole.Text = "Admin Role";
             // 
-            // label5
+            // lbUserName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(38, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 29);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Kyaw Zaw Win";
+            this.lbUserName.AutoSize = true;
+            this.lbUserName.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lbUserName.Location = new System.Drawing.Point(38, 0);
+            this.lbUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(125, 29);
+            this.lbUserName.TabIndex = 2;
+            this.lbUserName.Text = "Kyaw Zaw Win";
             // 
             // panel2
             // 
@@ -254,12 +254,12 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Purple;
-            this.label3.Location = new System.Drawing.Point(35, 2);
+            this.label3.Location = new System.Drawing.Point(17, 2);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 34);
+            this.label3.Size = new System.Drawing.Size(152, 34);
             this.label3.TabIndex = 0;
-            this.label3.Text = "MSS Software";
+            this.label3.Text = "MPSS Software";
             // 
             // FooterPanel
             // 
@@ -481,20 +481,20 @@
             // 
             // chartIncome
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartIncome.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.chartIncome.ChartAreas.Add(chartArea1);
             this.chartIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartIncome.Location = new System.Drawing.Point(0, 144);
             this.chartIncome.Name = "chartIncome";
-            series5.ChartArea = "ChartArea1";
-            series5.Color = System.Drawing.Color.Navy;
-            series5.MarkerBorderColor = System.Drawing.Color.Green;
-            series5.Name = "အရောင်းမှရရှိငွေ";
-            series6.ChartArea = "ChartArea1";
-            series6.Color = System.Drawing.Color.Green;
-            series6.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
-            this.chartIncome.Series.Add(series5);
-            this.chartIncome.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.Navy;
+            series1.MarkerBorderColor = System.Drawing.Color.Green;
+            series1.Name = "အရောင်းမှရရှိငွေ";
+            series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.Green;
+            series2.Name = "ဝန်ဆောင်မှုမှရရှိငွေ";
+            this.chartIncome.Series.Add(series1);
+            this.chartIncome.Series.Add(series2);
             this.chartIncome.Size = new System.Drawing.Size(921, 316);
             this.chartIncome.TabIndex = 0;
             this.chartIncome.Text = "Income Status";
@@ -725,7 +725,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MSS Accounting";
+            this.Text = "MPSS Software";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.TopPanel.ResumeLayout(false);
@@ -768,8 +768,8 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbUserRole;
+        private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.Button btnDashbook;
         private System.Windows.Forms.Button btnCashbook;
         private System.Windows.Forms.Button btnRecPay;

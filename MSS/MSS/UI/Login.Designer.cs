@@ -76,9 +76,9 @@
             this.label1.ForeColor = System.Drawing.Color.Purple;
             this.label1.Location = new System.Drawing.Point(165, -1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 56);
+            this.label1.Size = new System.Drawing.Size(111, 56);
             this.label1.TabIndex = 1;
-            this.label1.Text = "MSS";
+            this.label1.Text = "MPSS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2

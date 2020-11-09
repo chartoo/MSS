@@ -78,6 +78,7 @@
     <Compile Include="DO\Configuraion.cs" />
     <Compile Include="DO\Customer.cs" />
     <Compile Include="DO\DataEncryptor.cs" />
+    <Compile Include="DO\Login.cs" />
     <Compile Include="DO\ProfitLose.cs" />
     <Compile Include="DO\Sale.cs" />
     <Compile Include="DO\Service.cs" />

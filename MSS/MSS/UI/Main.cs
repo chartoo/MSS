@@ -17,6 +17,13 @@ namespace MSS
         public Main()
         {
             InitializeComponent();
+            lbUserName.Text = DO.Login.name;
+            lbUserRole.Text = DO.Login.role;
+            if (DO.Login.role == "Admin")
+            {
+                btnUser.Visible = true;
+            }
+            else btnUser.Visible = false;
             AddChartValue();
             TotalAmount();
         }
@@ -34,8 +41,8 @@ namespace MSS
         }
         private void AddChartValue()
         {
-            int[] yValuesOfSale = { 10, 25, 100, 34, 25, 224, 53, 22, 80, 241, 94, 100 };
-            int[] yValuesOfService = { 40, 250, 120, 34, 25, 324, 530, 22, 804, 241, 942, 143 };
+            int[] yValuesOfSale = { 30, 25, 100, 34, 25, 224, 53, 22, 80, 241, 94, 100 };
+            int[] yValuesOfService = { 140, 250, 120, 34, 25, 324, 530, 22, 804, 241, 942, 143 };
             string[] xValues = { "Jan", "Feb", "March", "Apr", "May", "Jan", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec" };
             chartIncome.Series[0].Points.DataBindXY(xValues, yValuesOfSale);
             chartIncome.Series[1].Points.DataBindXY(xValues, yValuesOfService);
@@ -111,8 +118,8 @@ namespace MSS
         {
             if(MessageBox.Show( "Are you sure wish to Logout ? ", "Question?", MessageBoxButtons.YesNo).Equals(DialogResult.Yes))
             {
-                new Login().Show();
                 this.Hide();
+                new Login().Show();
             }
         }
         private void TotalAmount()
